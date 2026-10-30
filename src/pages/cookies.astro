@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Cookie Notice"
+  description="Information about cookies and similar technologies used by the Charles Michael Sports Hub website."
+>
+  <section class="bg-navy text-white py-20 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle text-red-brand">Website Preferences</p>
+      <h1 class="font-display font-black text-6xl md:text-8xl leading-none mb-6">Cookie Notice</h1>
+      <p class="font-body text-blue-100 text-xl max-w-3xl leading-relaxed">
+        A straightforward explanation of cookies and similar technologies used on this website.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-9">
+      <div class="bg-bluegrey border-l-4 border-red-brand p-6 rounded-r-xl">
+        <p class="font-body text-gray-700 leading-relaxed">
+          <strong>Before launch:</strong> Confirm the production hosting configuration and scan the deployed site for cookies, local storage, analytics, and other tracking technologies. Update this notice if those findings differ from the description below.
+        </p>
+      </div>
+
+      <section>
+        <h2 class="font-display font-bold text-3xl text-navy mb-3">What are cookies?</h2>
+        <p class="font-body text-gray-600 leading-relaxed">
+          Cookies are small pieces of information stored by a website in your browser. Similar technologies can store or access information on your device.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display font-bold text-3xl text-navy mb-3">What this site uses</h2>
+        <p class="font-body text-gray-600 leading-relaxed">
+          This static site does not intentionally set analytics or advertising cookies. Its hosting provider may use technical mechanisms needed to deliver or secure the site. The site also requests fonts from Google Fonts; that external request is subject to Google's own practices and may involve your browser connecting to Google's servers.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display font-bold text-3xl text-navy mb-3">Managing cookies</h2>
+        <p class="font-body text-gray-600 leading-relaxed">
+          You can manage or delete cookies through your browser settings. Blocking cookies or external resources may affect how some websites display or function. If CMSH adds optional analytics, advertising, or preference cookies, this notice and any required consent controls should be updated before they are enabled.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="font-display font-bold text-3xl text-navy mb-3">More information</h2>
+        <p class="font-body text-gray-600 leading-relaxed">
+          For information about the handling of personal data, read the <a href="/privacy" class="text-red-brand underline hover:text-red-dark">Privacy Policy</a>. CMSH's verified privacy contact details will be added when available.
+        </p>
+      </section>
+    </div>
+  </section>
+</BaseLayout>

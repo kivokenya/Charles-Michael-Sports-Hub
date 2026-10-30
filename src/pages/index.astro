@@ -1,0 +1,350 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What age can my child start taekwondo?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Our junior programme welcomes athletes aged 8 to 17. We assess each child individually and focus on safety, fitness and confidence first."}
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need any experience to join?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No experience is needed. We welcome complete beginners at every class. Your first trial lesson is free."}
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Mount Kenya International Taekwondo Open Tournament open to all clubs?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Yes. The tournament is open to athletes from all registered clubs and dojangs in Kenya. Divisions will cover all belt levels and age categories."}
+    },
+    {
+      "@type": "Question",
+      "name": "What equipment does my child need?",
+      "acceptedAnswer": {"@type": "Answer", "text": "For the trial class, comfortable sports clothes are fine. Once you join, you will need a dobok (uniform) and basic protective gear. We can advise on where to buy these in Kenya."}
+    },
+  ]
+};
+---
+
+<BaseLayout
+  title="Home"
+  description="Charles Michael Sports Hub is Kenya's newest sports hub in Limuru, Kiambu County, offering taekwondo training and hosting the Mount Kenya International Taekwondo Open Tournament."
+  schema={schema}
+>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="relative bg-navy overflow-hidden diagonal-divider min-h-[90vh] flex items-center" style="clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);">
+    <!-- Background pattern -->
+    <div class="absolute inset-0 opacity-10" style="background-image: repeating-linear-gradient(45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 20px 20px;"></div>
+    <!-- Red accent bar -->
+    <div class="absolute top-0 left-0 w-2 h-full bg-red-brand"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Text -->
+      <div class="text-white">
+        <p class="font-display font-semibold text-red-brand text-xl uppercase tracking-widest mb-4 animate-fade-in">Karibu — Welcome</p>
+        <h1 class="font-display font-black text-6xl sm:text-7xl lg:text-8xl leading-none mb-6">
+          Train Hard.<br/>
+          <span class="text-red-brand">Compete</span><br/>
+          with Pride.
+        </h1>
+        <p class="font-body text-blue-100 text-xl leading-relaxed mb-10 max-w-xl">
+          Kenya's newest sports hub, based in Limuru. We create opportunities for athletes to train, compete and grow, with taekwondo at the heart of our flagship programme.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/contact#trial" class="btn-primary text-xl px-8 py-4">
+            Jaribu Bure · Book a Free Trial
+          </a>
+          <a href="/open-2027" class="btn-secondary text-xl px-8 py-4">
+            Flagship Tournament
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden lg:block">
+        <img
+          src="/images/training-team-wide.webp"
+          alt="Taekwondo athletes training together at the Limuru sports hub"
+          class="w-full aspect-[4/3] object-cover rounded-lg shadow-2xl border-4 border-red-brand/30"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COUNTDOWN STRIP ═══ -->
+  <section class="bg-red-brand text-white py-6" aria-label="Countdown to Mount Kenya International Taekwondo Open Tournament">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-4">
+        <img
+          src="/images/mount-kenya-open-logo-transparent.webp"
+          alt=""
+          width="96"
+          height="96"
+          class="w-20 h-20 object-contain"
+          loading="lazy"
+          decoding="async"
+        />
+        <p class="font-display font-bold text-2xl tracking-wide uppercase text-center sm:text-left">
+          Mount Kenya International Taekwondo Open Tournament
+        </p>
+      </div>
+      <div class="flex gap-6 text-center" id="countdown-display">
+        <div>
+          <span id="cd-days" class="font-display font-black text-5xl block leading-none">–</span>
+          <span class="font-body text-xs uppercase tracking-widest">Days</span>
+        </div>
+        <div class="text-3xl font-light opacity-50 self-center">:</div>
+        <div>
+          <span id="cd-hours" class="font-display font-black text-5xl block leading-none">–</span>
+          <span class="font-body text-xs uppercase tracking-widest">Hours</span>
+        </div>
+        <div class="text-3xl font-light opacity-50 self-center">:</div>
+        <div>
+          <span id="cd-mins" class="font-display font-black text-5xl block leading-none">–</span>
+          <span class="font-body text-xs uppercase tracking-widest">Mins</span>
+        </div>
+        <div class="text-3xl font-light opacity-50 self-center">:</div>
+        <div>
+          <span id="cd-secs" class="font-display font-black text-5xl block leading-none">–</span>
+          <span class="font-body text-xs uppercase tracking-widest">Secs</span>
+        </div>
+      </div>
+      <a href="/open-2027" class="btn-secondary border-white text-white font-display text-lg px-6 py-3 whitespace-nowrap">
+        Learn More →
+      </a>
+    </div>
+  </section>
+
+  <script>
+    const eventDate = new Date('2027-04-10T00:00:00+03:00');
+    function tick() {
+      const now = new Date();
+      const diff = eventDate.getTime() - now.getTime();
+      if (diff <= 0) {
+        document.getElementById('countdown-display')!.innerHTML =
+          '<span class="font-display font-black text-3xl">The event is underway!</span>';
+        return;
+      }
+      const days  = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins  = Math.floor((diff % 3600000) / 60000);
+      const secs  = Math.floor((diff % 60000) / 1000);
+      const set = (id: string, val: number) => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = String(val).padStart(2, '0');
+      };
+      set('cd-days', days);
+      set('cd-hours', hours);
+      set('cd-mins', mins);
+      set('cd-secs', secs);
+    }
+    tick();
+    setInterval(tick, 1000);
+  </script>
+
+  <!-- ═══ FOUR PILLARS ═══ -->
+  <section class="py-20 bg-bluegrey">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <p class="section-subtitle">What We Do</p>
+        <h2 class="section-title">Four Pillars of CMSH</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { icon: '🥋', title: 'Train', text: 'Structured coaching under World Taekwondo rules. Juniors (8–17) and seniors. Every level welcome.' },
+          { icon: '🏆', title: 'Compete', text: 'Host and enter sporting competitions. The Mount Kenya International Taekwondo Open Tournament is our flagship event.' },
+          { icon: '🎖️', title: 'Certify', text: 'Progress through belt grades at formal promotion tests. Earn recognition your CV will carry.' },
+          { icon: '🌍', title: 'Host', text: 'Bring athletes and communities together through well-run sporting events, starting with our international taekwondo open.' },
+        ].map((p, i) => (
+          <div class="card p-8 text-center reveal" style={`transition-delay: ${i * 100}ms`}>
+            <div class="text-5xl mb-4">{p.icon}</div>
+            <h3 class="font-display font-bold text-3xl text-navy mb-3">{p.title}</h3>
+            <p class="font-body text-gray-600 leading-relaxed text-sm">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOUNDER FEATURE ═══ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <img
+          src="/images/founder-black-belt.webp"
+          alt="Taekwondo black-belt athlete standing in uniform"
+          class="w-full aspect-square max-w-sm mx-auto object-cover object-top rounded-lg shadow-xl border-l-8 border-red-brand"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="reveal">
+        <p class="section-subtitle">Meet the Founder</p>
+        <h2 class="section-title mb-5">Michael Charles<br/>James Karuga</h2>
+        <p class="font-body text-gray-600 text-lg leading-relaxed mb-4">
+          Michael is a taekwondo black belt and a respected figure in Kenyan taekwondo. He founded Charles Michael Sports Hub to create more opportunities for Kenyan athletes — especially juniors in Limuru and Kiambu County — to train, compete and pursue their sporting ambitions.
+        </p>
+        <p class="font-body text-gray-600 text-lg leading-relaxed mb-8">
+          Under his guidance, CMSH operates strictly under World Taekwondo rules, ensuring every athlete we train is prepared for any regional or international stage.
+        </p>
+        <a href="/about" class="btn-navy">See More About Us →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ EVENT CARD ═══ -->
+  <section class="py-20 bg-navy" style="clip-path: polygon(0 3%, 100% 0, 100% 97%, 0 100%);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="reveal mb-10">
+        <p class="section-subtitle text-red-brand">Flagship Event</p>
+        <h2 class="font-display font-black text-6xl sm:text-7xl text-white leading-none">
+          Mount Kenya International<br/>Taekwondo Open Tournament
+        </h2>
+        <p class="font-display font-semibold text-3xl text-blue-200 mt-3">Saturday 10 – Sunday 11 April 2027 · Limuru, Kenya</p>
+        <p class="font-body text-blue-100 text-lg mt-3">Two days of international taekwondo competition.</p>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6 mb-12 reveal">
+        {[
+          { label: 'Athletes expected', value: '100+' },
+          { label: 'Spectators expected', value: '1,000+' },
+          { label: 'Competition format', value: 'W.T.F' },
+        ].map(stat => (
+          <div class="bg-white/10 backdrop-blur rounded-lg px-8 py-6 border border-white/20">
+            <div class="font-display font-black text-6xl text-white">{stat.value}</div>
+            <div class="font-body text-blue-200 text-sm uppercase tracking-wide mt-1">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
+        <a href="/open-2027" class="btn-secondary text-xl px-8 py-4">Event Details</a>
+        <a href="/contact#trial" class="btn-primary text-xl px-8 py-4">Register Interest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROGRAMMES ═══ -->
+  <section class="py-20 bg-bluegrey">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <p class="section-subtitle">Join Us</p>
+        <h2 class="section-title">Programmes</h2>
+        <p class="font-body text-gray-600 text-lg max-w-2xl mx-auto mt-4">
+          Whether you're 8 or 38, a beginner or a competitor — there's a place for you at Charles Michael Sports Hub.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { belt: 'bg-yellow-400', title: 'Juniors', ages: 'Ages 8–17', text: 'Fundamentals, fitness and character. Grading up the belt ladder in a safe, structured environment.' },
+          { belt: 'bg-red-brand', title: 'Seniors', ages: 'Adults', text: 'Competition prep, sparring, poomsae and fitness. All levels welcome, absolute beginners included.' },
+          { belt: 'bg-blue-600', title: 'Holiday Camps', ages: 'School holidays', text: 'Intensive week-long camps during school breaks. A great way to start or level up fast.' },
+          { belt: 'bg-green-600', title: 'School Partnerships', ages: 'Primary & Secondary', text: 'We bring taekwondo to your school. Enquire about a partnership programme.' },
+          { belt: 'bg-purple-700', title: 'Coach & Referee Courses', ages: 'Adults', text: 'Accredited courses with KTF (coming soon). Build your credentials to coach or referee at national level.' },
+        ].map((prog, i) => (
+          <div class="card reveal" style={`transition-delay: ${i * 80}ms`}>
+            <div class={`${prog.belt} h-2`}></div>
+            <div class="p-7">
+              <p class="font-body text-xs text-gray-400 uppercase tracking-wider mb-1">{prog.ages}</p>
+              <h3 class="font-display font-bold text-3xl text-navy mb-3">{prog.title}</h3>
+              <p class="font-body text-gray-600 text-sm leading-relaxed mb-6">{prog.text}</p>
+              <a href="/programmes" class="btn-navy text-base px-5 py-2.5">Learn More</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SPONSOR CALL-OUT ═══ -->
+  <section class="py-16 bg-white border-y border-gray-100">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <p class="section-subtitle">Sponsor the Open</p>
+      <h2 class="section-title mb-5">Partner With Us</h2>
+      <p class="font-body text-gray-600 text-lg max-w-2xl mx-auto mb-8">
+        The Mount Kenya International Taekwondo Open Tournament will bring athletes and families together in Limuru. Align your brand with discipline, ambition and community.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+        {[
+          { tier: 'Gold', price: 'KES 250,000', color: 'from-yellow-400 to-yellow-600', text: 'text-yellow-900' },
+          { tier: 'Silver', price: 'KES 150,000', color: 'from-gray-300 to-gray-500', text: 'text-gray-800' },
+          { tier: 'Bronze', price: 'KES 75,000', color: 'from-orange-400 to-orange-700', text: 'text-orange-900' },
+        ].map(s => (
+          <div class={`bg-gradient-to-br ${s.color} rounded-lg px-8 py-5 text-center shadow-md`}>
+            <div class={`font-display font-black text-4xl ${s.text}`}>{s.tier}</div>
+            <div class={`font-body font-semibold text-lg ${s.text}`}>{s.price}</div>
+          </div>
+        ))}
+      </div>
+      <a href="/sponsors" class="btn-navy text-xl px-10 py-4">View Sponsorship Packages</a>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="py-20 bg-bluegrey">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <p class="section-subtitle">Questions</p>
+        <h2 class="section-title">Frequently Asked</h2>
+      </div>
+      <div class="space-y-4" id="faq-list">
+        {[
+          { q: 'What age can my child start taekwondo?', a: 'Our junior programme welcomes athletes aged 8 to 17. We assess each child individually and focus on safety, fitness and confidence first.' },
+          { q: 'Do I need any experience to join?', a: 'No experience is needed. We welcome complete beginners at every class. Your first trial lesson is free.' },
+          { q: 'Is the Mount Kenya International Taekwondo Open Tournament open to all clubs?', a: 'Yes. The tournament is open to athletes from all registered clubs and dojangs in Kenya. Divisions will cover all belt levels and age categories.' },
+          { q: 'What equipment does my child need?', a: 'For the trial class, comfortable sports clothes are fine. Once you join, you will need a dobok (uniform) and basic protective gear. We can advise on where to buy these in Kenya.' },
+          { q: 'Is there financial support available?', a: 'Yes. We hold a number of scholarship places for girls and for families who face financial barriers. Contact us to enquire in confidence.' },
+        ].map((item, i) => (
+          <div class="card reveal" style={`transition-delay: ${i * 60}ms`}>
+            <button
+              class="w-full text-left px-6 py-5 flex justify-between items-center font-display font-bold text-xl text-navy focus-visible:outline-red-brand"
+              aria-expanded="false"
+              data-faq-btn
+            >
+              <span>{item.q}</span>
+              <svg class="w-5 h-5 flex-shrink-0 transition-transform duration-200 text-red-brand" data-faq-arrow fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="hidden px-6 pb-5 font-body text-gray-600 text-base leading-relaxed" data-faq-body>
+              {item.a}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('[data-faq-btn]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const body = btn.nextElementSibling as HTMLElement;
+        const arrow = btn.querySelector('[data-faq-arrow]') as HTMLElement;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        body?.classList.toggle('hidden');
+        arrow?.style.setProperty('transform', expanded ? '' : 'rotate(180deg)');
+      });
+    });
+  </script>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="py-24 bg-red-brand text-white text-center" style="clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+      <h2 class="font-display font-black text-6xl sm:text-7xl leading-none mb-6">
+        Your First Kick<br/>Is Free.
+      </h2>
+      <p class="font-body text-red-100 text-xl mb-10">
+        Come see what Charles Michael Sports Hub is building. Bring your child, bring yourself. No kit needed. Just show up.
+      </p>
+      <a href="/contact#trial" class="inline-flex items-center gap-3 bg-white text-red-brand font-display font-black text-2xl px-10 py-5 rounded-sm shadow-2xl hover:bg-bluegrey transition-colors">
+        Book Your Free Trial Today →
+      </a>
+    </div>
+  </section>
+
+</BaseLayout>

@@ -1,0 +1,99 @@
+---
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Programmes', href: '/programmes' },
+  { label: 'Mount Kenya Open', href: '/open-2027' },
+  { label: 'Sponsors', href: '/sponsors' },
+  { label: 'Pathway', href: '/pathway' },
+  { label: 'News', href: '/news' },
+  { label: 'Contact', href: '/contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 lg:h-24">
+
+      <!-- Logo -->
+      <a href="/" class="flex items-center flex-shrink-0" aria-label="Charles Michael Sports Hub — Home">
+        <img
+          src="/images/club-logo-transparent.webp"
+          alt="Charles Michael Sports Hub"
+          width="96"
+          height="96"
+          class="w-20 h-20 lg:w-24 lg:h-24 object-contain"
+          decoding="async"
+        />
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+        {navItems.map(({ label, href }) => (
+          <a
+            href={href}
+            class={`nav-link text-base ${currentPath === href || (href !== '/' && currentPath.startsWith(href)) ? 'active text-navy font-semibold' : ''}`}
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- CTA Button + Hamburger -->
+      <div class="flex items-center gap-3">
+        <a href="/contact#trial" class="hidden sm:inline-flex btn-primary text-base px-5 py-2.5">
+          Jaribu Bure · Book a Trial
+        </a>
+        <!-- Mobile menu button -->
+        <button
+          id="menu-btn"
+          class="lg:hidden p-2 rounded text-navy hover:bg-bluegrey transition-colors"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-gray-100 bg-white shadow-lg">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-1" aria-label="Mobile navigation">
+      {navItems.map(({ label, href }) => (
+        <a
+          href={href}
+          class={`px-4 py-3 rounded font-body font-medium text-base transition-colors hover:bg-bluegrey ${currentPath === href || (href !== '/' && currentPath.startsWith(href)) ? 'bg-bluegrey text-navy font-semibold' : 'text-gray-700'}`}
+        >
+          {label}
+        </a>
+      ))}
+      <a href="/contact#trial" class="mt-3 btn-primary text-center justify-center">
+        Jaribu Bure · Book a Trial
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden');
+    iconOpen?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+</script>

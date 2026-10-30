@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found"
+  description="The page you are looking for could not be found. Explore the Charles Michael Sports Hub website."
+>
+  <section class="min-h-[60vh] bg-bluegrey flex items-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <p class="font-display font-black text-8xl md:text-9xl text-red-brand leading-none mb-4">404</p>
+      <h1 class="font-display font-bold text-4xl md:text-5xl text-navy mb-4">We couldn't find that page</h1>
+      <p class="font-body text-gray-600 text-lg leading-relaxed mb-8">
+        The address may have changed, or the page may no longer be available. Head back to the hub and find what you need.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/" class="btn-primary">Back to Home</a>
+        <a href="/contact" class="btn-navy">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

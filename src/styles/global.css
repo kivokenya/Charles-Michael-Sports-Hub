@@ -1,0 +1,115 @@
+/* Charles Michael Sports Hub — Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans:ital,wght@0,400;0,600;0,700;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy: #1F3A5F;
+    --navy-dark: #152945;
+    --red: #B3202A;
+    --red-dark: #8f1921;
+    --bluegrey: #EEF3F8;
+    --white: #ffffff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Alumni Sans', sans-serif;
+    letter-spacing: 0.01em;
+  }
+
+  *:focus-visible {
+    outline: 3px solid #B3202A;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+    html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-red-brand text-white font-display font-bold text-lg px-7 py-3 rounded-sm
+           hover:bg-red-dark transition-colors duration-200 focus-visible:outline-2 shadow-md;
+    letter-spacing: 0.04em;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 bg-transparent text-white font-display font-bold text-lg px-7 py-3 rounded-sm
+           border-2 border-white hover:bg-white hover:text-navy transition-colors duration-200 shadow-md;
+    letter-spacing: 0.04em;
+  }
+
+  .btn-navy {
+    @apply inline-flex items-center gap-2 bg-navy text-white font-display font-bold text-lg px-7 py-3 rounded-sm
+           hover:bg-navy-dark transition-colors duration-200 shadow-md;
+    letter-spacing: 0.04em;
+  }
+
+  .section-title {
+    @apply font-display font-bold text-5xl md:text-6xl text-navy leading-tight;
+  }
+
+  .section-subtitle {
+    @apply font-display font-semibold text-red-brand text-xl uppercase tracking-widest mb-3;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow duration-300;
+  }
+
+  .diagonal-divider {
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  }
+
+  .diagonal-divider-rev {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+  }
+
+  .nav-link {
+    @apply font-body font-medium text-gray-700 hover:text-navy px-3 py-2 transition-colors duration-150 relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-3 right-3 h-0.5 bg-red-brand scale-x-0 transition-transform duration-200 origin-left;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply scale-x-100;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .placeholder-img {
+    @apply bg-gradient-to-br from-bluegrey to-gray-200 flex items-center justify-center text-gray-400 font-body text-sm;
+  }
+}

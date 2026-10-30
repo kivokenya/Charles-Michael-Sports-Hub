@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact Charles Michael Sports Hub in Limuru, Kenya, about sports programmes, partnerships, or the Mount Kenya International Taekwondo Open Tournament."
+>
+  <section class="bg-navy text-white py-20 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle text-red-brand">We'd Love to Hear From You</p>
+      <h1 class="font-display font-black text-6xl md:text-8xl leading-none mb-6">Contact Us</h1>
+      <p class="font-body text-blue-100 text-xl max-w-2xl leading-relaxed">
+        Ask us about a free trial, sports programmes, school partnerships, or the Mount Kenya International Taekwondo Open Tournament.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20 bg-bluegrey">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10">
+      <div class="space-y-6">
+        <div class="reveal">
+          <p class="section-subtitle">Get in Touch</p>
+          <h2 class="section-title mb-4">Start a Conversation</h2>
+          <p class="font-body text-gray-600 text-lg leading-relaxed">
+            Our hub is based in Limuru, Kiambu County. Contact us to confirm current class times, venue directions, fees, or accessibility arrangements before visiting.
+          </p>
+        </div>
+
+        <div class="card p-6 reveal">
+          <h3 class="font-display font-bold text-2xl text-navy mb-2">Location</h3>
+          <p class="font-body text-gray-600">Limuru Constituency, Kiambu County, Kenya</p>
+        </div>
+        <div id="open" class="card p-6 reveal">
+          <h3 class="font-display font-bold text-2xl text-navy mb-2">Contact details</h3>
+          <p class="font-body text-gray-600 mb-4">Call or WhatsApp us about training, partnerships, or the flagship tournament.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="tel:+254754151315" class="btn-navy">Call 0754 151 315</a>
+            <a href="https://wa.me/254754151315" target="_blank" rel="noopener noreferrer" class="btn-primary">WhatsApp 0754 151 315</a>
+          </div>
+          <div class="mt-4 space-y-2 font-body text-gray-600">
+            <p><a href="mailto:info@charlesmsports.com" class="text-navy underline">info@charlesmsports.com</a></p>
+            <p><a href="https://www.charlesmsports.com" class="text-navy underline">www.charlesmsports.com</a></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="trial" class="card p-7 md:p-9 reveal">
+        <p class="section-subtitle">Try a Class</p>
+        <h2 class="font-display font-bold text-4xl text-navy mb-3">Book a Free Trial</h2>
+        <p class="font-body text-gray-600 leading-relaxed mb-6">
+          Tell us a little about the athlete and the programme you're interested in. The enquiry form is not connected yet, so no information entered here will be sent.
+        </p>
+        <form class="space-y-5" aria-describedby="form-status">
+          <div>
+            <label for="name" class="block font-body font-semibold text-gray-700 mb-1">Your name</label>
+            <input id="name" name="name" type="text" autocomplete="name" class="w-full rounded border border-gray-300 px-4 py-3" disabled />
+          </div>
+          <div>
+            <label for="email" class="block font-body font-semibold text-gray-700 mb-1">Email address</label>
+            <input id="email" name="email" type="email" autocomplete="email" class="w-full rounded border border-gray-300 px-4 py-3" disabled />
+          </div>
+          <div>
+            <label for="programme" class="block font-body font-semibold text-gray-700 mb-1">Programme</label>
+            <select id="programme" name="programme" class="w-full rounded border border-gray-300 px-4 py-3" disabled>
+              <option>Choose a programme</option>
+              <option>Juniors</option>
+              <option>Seniors</option>
+              <option>School partnership</option>
+              <option>Mount Kenya International Taekwondo Open Tournament</option>
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block font-body font-semibold text-gray-700 mb-1">How can we help?</label>
+            <textarea id="message" name="message" rows="4" class="w-full rounded border border-gray-300 px-4 py-3" disabled></textarea>
+          </div>
+          <button type="submit" class="btn-primary opacity-60 cursor-not-allowed" disabled>Enquiry form coming soon</button>
+          <p id="form-status" class="font-body text-sm text-gray-500">
+            The form will be enabled when a secure submission service and verified contact details are in place.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <h2 class="font-display font-bold text-3xl text-navy mb-3">Not sure where to start?</h2>
+      <p class="font-body text-gray-600 mb-6">Explore our sports programmes or learn more about the 2027 tournament.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="/programmes" class="btn-navy">Explore Programmes</a>
+        <a href="/open-2027" class="btn-primary">Tournament Details</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

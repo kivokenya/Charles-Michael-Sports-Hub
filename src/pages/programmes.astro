@@ -1,0 +1,200 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const programmes = [
+  {
+    id: 'juniors',
+    belt: 'bg-yellow-400',
+    beltName: 'Yellow Belt',
+    title: 'Juniors',
+    ages: 'Ages 8–17',
+    icon: '🥋',
+    who: 'Boys and girls aged 8 to 17, at any level — from complete beginners to those who have trained before.',
+    what: [
+      'Taekwondo fundamentals: stances, blocks, kicks, punches',
+      'Poomsae (patterns) practice and competition',
+      'Kyorugi (sparring) introduced progressively and safely',
+      'Belt grading examinations',
+      'Physical fitness and coordination',
+      'Discipline, respect and confidence',
+    ],
+    schedule: '[PLACEHOLDER: Days and times — e.g. Mon/Wed/Sat 9:00am–10:30am]',
+    fee: '[PLACEHOLDER: Monthly membership fee]',
+  },
+  {
+    id: 'seniors',
+    belt: 'bg-red-brand',
+    beltName: 'Red Belt',
+    title: 'Seniors',
+    ages: 'Adults (18+)',
+    icon: '🏆',
+    who: 'Adults of any level. Whether you are a returning athlete, a complete beginner, or training for competition — you are welcome.',
+    what: [
+      'Advanced kyorugi (sparring) and poomsae',
+      'Competition preparation',
+      'Strength, agility and endurance training',
+      'Belt grading and dan promotion',
+      'Fitness and self-discipline',
+    ],
+    schedule: '[PLACEHOLDER: Days and times]',
+    fee: '[PLACEHOLDER: Monthly membership fee]',
+  },
+  {
+    id: 'holiday',
+    belt: 'bg-blue-500',
+    beltName: 'Blue Belt',
+    title: 'Holiday Camps',
+    ages: 'School holidays',
+    icon: '⛺',
+    who: 'Junior athletes during school holidays. A great entry point or a fast way to accelerate progress in a short time.',
+    what: [
+      'Intensive daily training sessions',
+      'Physical conditioning',
+      'Technique workshops',
+      'Fun team activities',
+    ],
+    schedule: '[PLACEHOLDER: Next camp dates]',
+    fee: '[PLACEHOLDER: Camp fee]',
+  },
+  {
+    id: 'school',
+    belt: 'bg-green-600',
+    beltName: 'Green Belt',
+    title: 'School Partnerships',
+    ages: 'Primary & secondary schools',
+    icon: '🏫',
+    who: 'We bring the programme to your school. Ideal for schools looking to add taekwondo to their sports offering.',
+    what: [
+      'Curriculum-linked sessions during PE or activities time',
+      'In-school coaching by CMSH instructors',
+      'Grading opportunities for participating pupils',
+      'Inter-school tournament pathway',
+    ],
+    schedule: '[PLACEHOLDER: Enquire for details]',
+    fee: '[PLACEHOLDER: School package rates — enquire]',
+  },
+  {
+    id: 'coaching',
+    belt: 'bg-purple-700',
+    beltName: 'Black Belt Pathway',
+    title: 'Coach & Referee Courses',
+    ages: 'Adults',
+    icon: '📋',
+    who: 'Athletes and former athletes looking to give back by coaching or officiating.',
+    what: [
+      'KTF-accredited coaching certification (coming soon)',
+      'KTF-accredited referee certification (coming soon)',
+      'Practical training and assessment',
+    ],
+    schedule: 'Coming soon — pending KTF accreditation',
+    fee: '[PLACEHOLDER: Course fee]',
+  },
+];
+---
+
+<BaseLayout
+  title="Programmes"
+  description="Taekwondo programmes at Charles Michael Sports Hub — Juniors (8–17), Seniors, Holiday Camps, School Partnerships and Coach/Referee Courses in Limuru, Kenya."
+>
+
+  <!-- Hero -->
+  <section class="bg-navy text-white py-24" style="clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle text-red-brand mb-3">Train With Us</p>
+      <h1 class="font-display font-black text-7xl md:text-8xl text-white leading-none mb-6">Programmes</h1>
+      <p class="font-body text-blue-100 text-xl max-w-2xl leading-relaxed">
+        From first kicks to the competition mat. Find your programme below.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
+      <img
+        src="/images/dojo-team.webp"
+        alt="Coaches and athletes training together on the sports hub mats"
+        class="w-full aspect-[4/3] object-cover rounded-lg shadow-lg"
+        loading="lazy"
+        decoding="async"
+      />
+      <div>
+        <p class="section-subtitle">Train Together</p>
+        <h2 class="section-title mb-4">A place to grow through sport</h2>
+        <p class="font-body text-gray-600 text-lg leading-relaxed">
+          Our taekwondo programmes welcome beginners and experienced athletes, with coaching that builds fitness, confidence and competition skills.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Belt progress bar -->
+  <div class="bg-white border-b border-gray-100 py-5 overflow-x-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-3 min-w-max">
+      {['White','Yellow','Green','Blue','Red','Black'].map((belt, i) => (
+        <div class="flex items-center gap-3">
+          <div class={`w-10 h-4 rounded-sm shadow-sm ${belt === 'White' ? 'bg-gray-200 border border-gray-300' : belt === 'Yellow' ? 'bg-yellow-400' : belt === 'Green' ? 'bg-green-600' : belt === 'Blue' ? 'bg-blue-600' : belt === 'Red' ? 'bg-red-brand' : 'bg-gray-900'}`}></div>
+          <span class="font-body text-xs text-gray-500">{belt}</span>
+          {i < 5 && <span class="text-gray-300">→</span>}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Programme cards -->
+  <section class="py-20 bg-bluegrey">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      {programmes.map((prog, i) => (
+        <div id={prog.id} class="card reveal" style={`transition-delay: ${i * 80}ms`}>
+          <div class={`${prog.belt} h-3`}></div>
+          <div class="p-8 grid md:grid-cols-3 gap-8 items-start">
+            <!-- Left -->
+            <div class="md:col-span-1">
+              <div class="text-5xl mb-4">{prog.icon}</div>
+              <p class="font-body text-xs text-gray-400 uppercase tracking-wider mb-1">{prog.ages}</p>
+              <h2 class="font-display font-bold text-5xl text-navy mb-4">{prog.title}</h2>
+              <p class="font-body text-gray-600 leading-relaxed mb-6">{prog.who}</p>
+              <a href="/contact#trial" class="btn-primary text-base px-6 py-3">Book a Free Trial →</a>
+            </div>
+            <!-- Right -->
+            <div class="md:col-span-2 grid sm:grid-cols-3 gap-6">
+              <div class="sm:col-span-2">
+                <h3 class="font-display font-bold text-2xl text-navy mb-4">What to Expect</h3>
+                <ul class="space-y-2">
+                  {prog.what.map(item => (
+                    <li class="flex items-start gap-3 font-body text-gray-600 text-sm">
+                      <span class="text-red-brand font-bold mt-0.5 flex-shrink-0">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div class="space-y-4">
+                <div class="bg-bluegrey rounded-lg p-5">
+                  <p class="font-body text-xs text-gray-400 uppercase tracking-wider mb-1">Schedule</p>
+                  <p class="font-display font-bold text-navy text-lg">{prog.schedule}</p>
+                </div>
+                <div class="bg-bluegrey rounded-lg p-5">
+                  <p class="font-body text-xs text-gray-400 uppercase tracking-wider mb-1">Membership Fee</p>
+                  <p class="font-display font-bold text-navy text-lg">{prog.fee}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Scholarship note -->
+  <section class="py-14 bg-navy text-white text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+      <div class="text-5xl mb-4">🌟</div>
+      <h2 class="font-display font-bold text-5xl mb-4">Scholarship Places</h2>
+      <p class="font-body text-blue-100 text-xl leading-relaxed mb-8">
+        We hold a number of scholarship places for girls and for families where cost is a barrier. Taekwondo should not be accessible only to those who can easily afford it. Contact us to enquire — all conversations are confidential.
+      </p>
+      <a href="/contact" class="btn-secondary text-xl px-8 py-4">Enquire in Confidence →</a>
+    </div>
+  </section>
+
+</BaseLayout>

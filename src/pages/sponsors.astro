@@ -1,0 +1,305 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const tiers = [
+  {
+    name: 'Gold',
+    price: 'KES 250,000',
+    available: '1 available',
+    gradient: 'from-yellow-400 to-yellow-600',
+    textColor: 'text-yellow-900',
+    borderColor: 'border-yellow-400',
+    badge: 'Title Sponsor',
+    benefits: [
+      'Title billing: "[Company] presents the Mount Kenya International Taekwondo Open Tournament"',
+      'Logo on all event banners and backdrops',
+      'Logo on athlete bibs (kyorugi bibs)',
+      "Logo on the winners' podium backdrop",
+      'Logo on event T-shirts',
+      'Three social media announcements (pre, during and post-event)',
+      'Exhibition booth space at the venue',
+      'Five VIP passes',
+      'Speaking slot at the opening ceremony',
+      'Logo and link on the event website',
+      'Acknowledgement in all press releases',
+      'Post-event report within 14 days',
+    ],
+  },
+  {
+    name: 'Silver',
+    price: 'KES 150,000',
+    available: 'Limited availability',
+    gradient: 'from-gray-300 to-gray-500',
+    textColor: 'text-gray-900',
+    borderColor: 'border-gray-400',
+    badge: 'Official Sponsor',
+    benefits: [
+      'Logo on the main event banner and backdrop',
+      'Logo on event T-shirts',
+      'Two social media announcements',
+      'Exhibition booth space at the venue',
+      'Three VIP passes',
+      'Acknowledgement at the prize ceremony',
+      'Logo and link on the event website',
+      'Post-event report within 14 days',
+    ],
+  },
+  {
+    name: 'Bronze',
+    price: 'KES 75,000',
+    available: 'Limited availability',
+    gradient: 'from-orange-400 to-orange-700',
+    textColor: 'text-orange-900',
+    borderColor: 'border-orange-400',
+    badge: 'Supporting Sponsor',
+    benefits: [
+      'Logo on the main event banner',
+      'One social media announcement',
+      'Two VIP passes',
+      'Acknowledgement in the official event programme',
+      'Logo and link on the event website',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Sponsors"
+  description="Partner with Charles Michael Sports Hub for the Mount Kenya International Taekwondo Open Tournament, scheduled for 10–11 April 2027."
+>
+
+  <!-- Hero -->
+  <section class="bg-navy text-white py-24" style="clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle text-red-brand mb-3">Partnerships</p>
+      <h1 class="font-display font-black text-7xl md:text-8xl text-white leading-none mb-6">Sponsor<br/>the Open</h1>
+      <p class="font-body text-blue-100 text-xl max-w-2xl leading-relaxed">
+        Align your brand with discipline, ambition and community. The Mount Kenya International Taekwondo Open Tournament will bring athletes and families together in Limuru on 10–11 April 2027.
+      </p>
+    </div>
+  </section>
+
+  <!-- Why Partner -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-14 items-center">
+      <div class="reveal">
+        <p class="section-subtitle">The Opportunity</p>
+        <h2 class="section-title mb-6">Why Partner With Us?</h2>
+        <p class="font-body text-gray-600 text-lg leading-relaxed mb-5">
+          The Mount Kenya International Taekwondo Open Tournament is our flagship sporting event, bringing athletes, coaches and families together in Limuru. Nairobi hosted the first World Taekwondo Under-21 Championships in December 2025; we are building on Kenya's growing profile in international sport.
+        </p>
+        <p class="font-body text-gray-600 text-lg leading-relaxed mb-8">
+          Over 100 athletes competing. Over 1,000 spectators expected at the venue. Ongoing social media reach to Kenya's taekwondo community. This is a real, sports-loving audience for your brand.
+        </p>
+        <ul class="space-y-3">
+          {[
+            'Committed audience of athletes, parents, coaches and officials',
+            'Event branding across physical and digital channels',
+            'Association with discipline, youth development and community',
+            'Written sponsorship agreement — no surprises',
+            'Post-event report with photo evidence within 14 days',
+          ].map(point => (
+            <li class="flex items-start gap-3 font-body text-gray-700 text-base">
+              <span class="text-red-brand font-bold flex-shrink-0 mt-0.5">✓</span>
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="grid grid-cols-2 gap-4 reveal">
+        {[
+          { value: '100+', label: 'Athletes' },
+          { value: '1,000+', label: 'Spectators' },
+          { value: 'All day', label: 'Venue exposure' },
+          { value: 'W.T.F', label: 'International standard' },
+        ].map(stat => (
+          <div class="bg-bluegrey rounded-xl p-7 text-center">
+            <div class="font-display font-black text-6xl text-navy leading-none">{stat.value}</div>
+            <div class="font-body text-gray-500 text-sm uppercase tracking-wide mt-2">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tier Cards -->
+  <section class="py-20 bg-bluegrey">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <p class="section-subtitle">Packages</p>
+        <h2 class="section-title">Sponsorship Tiers</h2>
+        <p class="font-body text-gray-600 text-lg max-w-xl mx-auto mt-4">
+          All packages include a written sponsorship agreement and a post-event report. In-kind sponsorship is welcome — contact us to discuss.
+        </p>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-8">
+        {tiers.map((tier, i) => (
+          <div class={`card reveal flex flex-col border-t-8 ${tier.borderColor}`} style={`transition-delay: ${i * 100}ms`}>
+            <!-- Header -->
+            <div class={`bg-gradient-to-br ${tier.gradient} p-8 text-center`}>
+              <span class={`inline-block font-body text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full bg-white/30 ${tier.textColor} mb-3`}>{tier.badge}</span>
+              <div class={`font-display font-black text-6xl ${tier.textColor} leading-none`}>{tier.name}</div>
+              <div class={`font-display font-bold text-2xl ${tier.textColor} mt-2`}>{tier.price}</div>
+              <div class={`font-body text-sm ${tier.textColor} opacity-80 mt-1`}>{tier.available}</div>
+            </div>
+            <!-- Benefits -->
+            <div class="p-8 flex-1 flex flex-col">
+              <ul class="space-y-3 flex-1 mb-8">
+                {tier.benefits.map(b => (
+                  <li class="flex items-start gap-3 font-body text-gray-700 text-sm">
+                    <span class="text-red-brand font-bold flex-shrink-0 mt-0.5">✓</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <a href="#sponsor-enquiry" class="btn-navy text-base px-6 py-3 text-center justify-center">Enquire About {tier.name} →</a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- In-kind note -->
+      <div class="mt-10 bg-white rounded-xl p-8 border border-gray-200 text-center reveal">
+        <p class="font-display font-bold text-2xl text-navy mb-3">Packages Can Be Tailored</p>
+        <p class="font-body text-gray-600 text-lg max-w-2xl mx-auto">
+          Not every sponsor fits neatly into a tier. If you want to discuss a bespoke arrangement — or if you can contribute equipment, services or expertise rather than cash — we want to hear from you. In-kind support is genuinely welcome.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What sponsors can expect -->
+  <section class="py-20 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="mb-12 reveal">
+        <p class="section-subtitle">Our Commitment to You</p>
+        <h2 class="section-title">What to Expect</h2>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-8">
+        {[
+          { icon: '📝', title: 'Written Agreement', text: 'Every sponsor receives a formal sponsorship agreement before any payment. No ambiguity — exactly what you get, in writing.' },
+          { icon: '✅', title: 'Logo Approval', text: 'We will send you proofs of all branded materials for sign-off before printing or publishing. Your brand is safe.' },
+          { icon: '📊', title: 'Post-Event Report', text: 'Within 14 days of the event, you receive a full report: attendance figures, social reach, photo evidence of branding.' },
+        ].map((item, i) => (
+          <div class="card p-8 text-center reveal" style={`transition-delay: ${i * 100}ms`}>
+            <div class="text-5xl mb-4">{item.icon}</div>
+            <h3 class="font-display font-bold text-2xl text-navy mb-3">{item.title}</h3>
+            <p class="font-body text-gray-600 text-sm leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- PDF Download -->
+  <section class="py-12 bg-bluegrey border-y border-gray-200">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+      <p class="font-display font-bold text-3xl text-navy mb-4">Download the Sponsorship Pack</p>
+      <p class="font-body text-gray-600 mb-6">A full PDF with all tier benefits, branding specifications and contact details.</p>
+      <a href="/downloads/cmsh-sponsorship-pack.pdf" class="btn-navy text-lg px-8 py-3">
+        📄 Download Sponsorship Pack (PDF)
+      </a>
+      <p class="font-body text-xs text-gray-400 mt-3">[PLACEHOLDER: Upload PDF to /public/downloads/ before launch]</p>
+    </div>
+  </section>
+
+  <!-- Enquiry form -->
+  <section id="sponsor-enquiry" class="py-20 bg-navy text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <p class="section-subtitle text-red-brand">Get in Touch</p>
+        <h2 class="font-display font-black text-6xl text-white">Sponsor Enquiry</h2>
+        <p class="font-body text-blue-100 text-lg mt-4">Complete the form below and we will respond within two business days.</p>
+      </div>
+      <form
+        id="sponsor-form"
+        class="space-y-6 bg-white/10 backdrop-blur rounded-xl p-8 reveal"
+        novalidate
+      >
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="sp-company" class="block font-body text-sm font-medium text-blue-100 mb-1">Company / Organisation <span class="text-red-brand">*</span></label>
+            <input id="sp-company" name="company" type="text" required autocomplete="organization"
+              class="w-full bg-white/10 border border-white/30 rounded px-4 py-3 text-white placeholder-blue-300 font-body focus:outline-none focus:border-red-brand focus:bg-white/20 transition" placeholder="Your company name">
+          </div>
+          <div>
+            <label for="sp-contact" class="block font-body text-sm font-medium text-blue-100 mb-1">Contact Name <span class="text-red-brand">*</span></label>
+            <input id="sp-contact" name="contact_name" type="text" required autocomplete="name"
+              class="w-full bg-white/10 border border-white/30 rounded px-4 py-3 text-white placeholder-blue-300 font-body focus:outline-none focus:border-red-brand focus:bg-white/20 transition" placeholder="Your full name">
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="sp-email" class="block font-body text-sm font-medium text-blue-100 mb-1">Email Address <span class="text-red-brand">*</span></label>
+            <input id="sp-email" name="email" type="email" required autocomplete="email"
+              class="w-full bg-white/10 border border-white/30 rounded px-4 py-3 text-white placeholder-blue-300 font-body focus:outline-none focus:border-red-brand focus:bg-white/20 transition" placeholder="you@company.com">
+          </div>
+          <div>
+            <label for="sp-tier" class="block font-body text-sm font-medium text-blue-100 mb-1">Tier of Interest</label>
+            <select id="sp-tier" name="tier"
+              class="w-full bg-white/10 border border-white/30 rounded px-4 py-3 text-white font-body focus:outline-none focus:border-red-brand focus:bg-white/20 transition">
+              <option value="" class="text-gray-800">Not decided yet</option>
+              <option value="gold" class="text-gray-800">Gold — KES 250,000</option>
+              <option value="silver" class="text-gray-800">Silver — KES 150,000</option>
+              <option value="bronze" class="text-gray-800">Bronze — KES 75,000</option>
+              <option value="bespoke" class="text-gray-800">Bespoke / In-kind</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="sp-message" class="block font-body text-sm font-medium text-blue-100 mb-1">Message</label>
+          <textarea id="sp-message" name="message" rows="4"
+            class="w-full bg-white/10 border border-white/30 rounded px-4 py-3 text-white placeholder-blue-300 font-body focus:outline-none focus:border-red-brand focus:bg-white/20 transition resize-none" placeholder="Tell us a bit about your business and what you're looking for from this partnership."></textarea>
+        </div>
+        <div id="sp-success" class="hidden bg-green-500/20 border border-green-400 rounded-lg p-4 text-green-200 font-body text-sm" role="alert">
+          ✓ Thank you — we will be in touch within two business days.
+        </div>
+        <div id="sp-error" class="hidden bg-red-500/20 border border-red-400 rounded-lg p-4 text-red-200 font-body text-sm" role="alert"></div>
+        <button type="submit" id="sp-submit" class="btn-primary w-full justify-center text-lg py-4">
+          Send Enquiry →
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById('sponsor-form') as HTMLFormElement;
+    const success = document.getElementById('sp-success')!;
+    const error = document.getElementById('sp-error')!;
+    const submitBtn = document.getElementById('sp-submit') as HTMLButtonElement;
+
+    form?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      error.classList.add('hidden');
+      success.classList.add('hidden');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const res = await fetch('/api/sponsor', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        if (res.ok) {
+          form.reset();
+          success.classList.remove('hidden');
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          const msg = await res.text();
+          error.textContent = msg || 'Something went wrong. Please email us directly.';
+          error.classList.remove('hidden');
+        }
+      } catch {
+        error.textContent = 'Could not send — please check your connection and try again.';
+        error.classList.remove('hidden');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Enquiry →';
+      }
+    });
+  </script>
+
+</BaseLayout>

@@ -1,0 +1,164 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About Us"
+  description="Learn about Charles Michael Sports Hub in Limuru — our story, sports vision, founder Michael Charles James Karuga, and taekwondo flagship tournament."
+>
+
+  <!-- Page Hero -->
+  <section class="bg-navy text-white py-24" style="clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="section-subtitle text-red-brand mb-3">Our Story</p>
+      <h1 class="font-display font-black text-7xl md:text-8xl text-white leading-none mb-6">About CMSH</h1>
+      <p class="font-body text-blue-100 text-xl max-w-2xl leading-relaxed">
+        A sports hub built on discipline, pride and a clear vision for Kenyan athletes.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story & Mission -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-16 items-start">
+      <div class="reveal">
+        <p class="section-subtitle">Our Mission</p>
+        <h2 class="section-title mb-6">Built for the Long Game</h2>
+        <p class="font-body text-gray-600 text-lg leading-relaxed mb-5">
+          Charles Michael Sports Hub was founded in Limuru to create more opportunities for people to train, compete and grow through sport. Taekwondo is our flagship programme, delivered under the same rules and standards that govern competitions from local tournaments all the way to the Olympic Games.
+        </p>
+        <p class="font-body text-gray-600 text-lg leading-relaxed mb-5">
+          We believe sport changes lives. Not because of trophies alone, but because of what happens in the dojang every week — the discipline, the respect, the persistence. We train athletes. We also build people.
+        </p>
+        <p class="font-body text-gray-600 text-lg leading-relaxed">
+          Our long-term aim is to host a World Taekwondo–recognised international open in Kenya, working with the Kenya Taekwondo Federation as the path to that recognition. But first things first: we train, we compete, and we prove what is possible.
+        </p>
+      </div>
+      <div class="reveal space-y-6">
+        <div class="bg-bluegrey border-l-4 border-navy p-7 rounded-r-lg">
+          <h3 class="font-display font-bold text-2xl text-navy mb-2">Why Limuru?</h3>
+          <p class="font-body text-gray-600 leading-relaxed">
+            Limuru sits at the centre of Kiambu County, with strong school networks and a community of families who value sport. It is the right place to build something lasting.
+          </p>
+        </div>
+        <div class="bg-bluegrey border-l-4 border-red-brand p-7 rounded-r-lg">
+          <h3 class="font-display font-bold text-2xl text-navy mb-2">Context: Kenya on the World Stage</h3>
+          <p class="font-body text-gray-600 leading-relaxed">
+            Nairobi hosted the first World Taekwondo Under-21 Championships in December 2025 — 452 athletes, 75 nations. Kenya has the infrastructure and the appetite. We intend to be part of what comes next.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder -->
+  <section class="py-20 bg-bluegrey">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-12 items-start">
+      <div class="reveal lg:col-span-1">
+        <img
+          src="/images/founder-black-belt.webp"
+          alt="Black-belt athlete in a taekwondo uniform"
+          class="w-full aspect-square object-cover object-top rounded-lg shadow-xl border-4 border-red-brand/30"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="reveal lg:col-span-2">
+        <p class="section-subtitle">The Founder</p>
+        <h2 class="section-title mb-2">Michael Charles James Karuga</h2>
+        <p class="font-display text-2xl text-red-brand font-semibold mb-6">Black Belt, Taekwondo</p>
+
+        <!-- Credentials block -->
+        <div class="grid sm:grid-cols-2 gap-4 mb-8">
+          {[
+            { label: 'Belt Grade', value: 'Black Belt [PLACEHOLDER: Dan rank]' },
+            { label: 'Years Coaching', value: '[PLACEHOLDER: X years]' },
+            { label: 'Certifications', value: '[PLACEHOLDER: WT / KTF certificates]' },
+            { label: 'Competitions', value: '[PLACEHOLDER: Career highlights]' },
+          ].map(c => (
+            <div class="bg-white rounded-lg p-5 shadow-sm border border-gray-100">
+              <p class="font-body text-xs text-gray-400 uppercase tracking-wider mb-1">{c.label}</p>
+              <p class="font-display font-bold text-xl text-navy">{c.value}</p>
+            </div>
+          ))}
+        </div>
+
+        <p class="font-body text-gray-600 text-lg leading-relaxed mb-4">
+          Michael has dedicated his career to taekwondo — as an athlete, as a coach, and now as a tournament organiser. He is a respected figure in Kenyan taekwondo and brings both technical rigour and a genuine passion for community impact.
+        </p>
+        <p class="font-body text-gray-600 text-lg leading-relaxed">
+          He founded Charles Michael Sports Hub to create something he always wanted for Kenyan athletes: a home that takes talent seriously from the first class, not just when a child hits the national circuit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <p class="section-subtitle">What We Stand For</p>
+        <h2 class="section-title">Our Values</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        {[
+          { icon: '🎯', title: 'Excellence', text: 'We set high standards. For our athletes and for ourselves.' },
+          { icon: '🙇', title: 'Respect', text: 'In taekwondo, respect is not optional. It is foundational.' },
+          { icon: '🌍', title: 'Inclusion', text: 'Sport should be open to all. We hold places for girls and for families facing financial barriers.' },
+          { icon: '🛡️', title: 'Safety', text: 'Every athlete, especially children, trains in a safe, vetted environment.' },
+          { icon: '⚖️', title: 'Integrity', text: "We say what we mean, publish what we know, and mark what we don't." },
+        ].map((v, i) => (
+          <div class="card p-6 text-center reveal" style={`transition-delay: ${i * 80}ms`}>
+            <div class="text-4xl mb-3">{v.icon}</div>
+            <h3 class="font-display font-bold text-2xl text-navy mb-2">{v.title}</h3>
+            <p class="font-body text-gray-600 text-sm leading-relaxed">{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="py-20 bg-navy text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 reveal">
+        <p class="section-subtitle text-red-brand">Where We're Going</p>
+        <h2 class="font-display font-black text-6xl text-white">The Roadmap</h2>
+      </div>
+      <div class="space-y-0">
+        {[
+          {
+            stage: '01', title: 'Foundation', status: 'Now',
+            text: 'Establish the academy in Limuru. Recruit and train junior and senior athletes. Build a coaching team. Run the first internal and open club competitions.',
+            current: true,
+          },
+          {
+            stage: '02', title: 'Prove', status: 'Near term',
+            text: 'Host the Mount Kenya International Taekwondo Open Tournament, demonstrate event management capability, and build relationships with KTF, coaches and clubs across Kenya.',
+            current: false,
+          },
+          {
+            stage: '03', title: 'Build and Host', status: 'Long term',
+            text: 'Apply (through KTF as the appropriate body) for World Taekwondo recognition of the Charles Michael International Open. Host an event on the global calendar.',
+            current: false,
+          },
+        ].map((step, i) => (
+          <div class={`flex gap-6 items-start pb-10 reveal ${i < 2 ? 'border-l-2 border-red-brand/30 ml-6 pl-8' : 'ml-6 pl-8'}`} style={`transition-delay: ${i * 100}ms`}>
+            <div class={`flex-shrink-0 -ml-14 w-12 h-12 rounded-full flex items-center justify-center font-display font-black text-xl ${step.current ? 'bg-red-brand text-white' : 'bg-navy-light border-2 border-blue-400 text-blue-200'}`}>
+              {step.stage}
+            </div>
+            <div>
+              <p class={`font-body text-xs uppercase tracking-widest mb-1 ${step.current ? 'text-red-brand' : 'text-blue-300'}`}>{step.status}</p>
+              <h3 class="font-display font-bold text-4xl text-white mb-3">{step.title}</h3>
+              <p class="font-body text-blue-100 text-lg leading-relaxed">{step.text}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-8 text-center reveal">
+        <a href="/pathway" class="btn-secondary text-xl px-8 py-4">Understand the Full Pathway →</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
