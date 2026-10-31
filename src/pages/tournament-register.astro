@@ -1,0 +1,249 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SportIcon from '../components/SportIcon.astro';
+---
+
+<BaseLayout
+  title="Mount Kenya Open Athlete Registration"
+  description="Register your interest as an athlete for the Mount Kenya International Taekwondo Open Tournament 2027 in Limuru."
+>
+  <section class="bg-navy text-white py-16 md:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-[1.2fr_.8fr] gap-12 items-center">
+      <div>
+        <p class="section-subtitle text-red-brand">Mount Kenya Open 2027</p>
+        <h1 class="font-display font-black text-5xl sm:text-6xl md:text-7xl leading-none mb-6">Athlete Registration</h1>
+        <p class="font-body text-blue-100 text-lg sm:text-xl leading-relaxed max-w-2xl mb-5">
+          Send the organising team your athlete and competition details for the Mount Kenya International Taekwondo Open Tournament.
+        </p>
+        <p class="font-body text-blue-200 mb-8">10 and 11 April 2027 | Limuru, Kiambu County</p>
+        <a href="#tournament-entry-form" class="btn-primary">Start athlete registration</a>
+      </div>
+      <div class="flex flex-col items-center text-center">
+        <SportIcon name="taekwondo" label="Taekwondo athlete" size="lg" decorative />
+        <h2 class="font-display font-bold text-3xl mt-5">Kyorugi and Poomsae</h2>
+        <p class="font-body text-blue-100 mt-2">Select one or both competition events.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 bg-bluegrey">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-3 gap-4">
+      <div class="card p-5"><strong class="block font-display text-xl text-navy mb-1">Registration opens</strong><span class="font-body text-gray-600">1 February 2027</span></div>
+      <div class="card p-5"><strong class="block font-display text-xl text-navy mb-1">Athlete entry fee</strong><span class="font-body text-gray-600">KSh 1,000 per participant</span></div>
+      <div class="card p-5"><strong class="block font-display text-xl text-navy mb-1">Payment instructions</strong><span class="font-body text-gray-600">Shared by the organiser after enquiry</span></div>
+    </div>
+  </section>
+
+  <section class="py-16 pb-28 md:py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <p class="section-subtitle">Tournament Entry</p>
+        <h2 class="section-title">Athlete details</h2>
+        <p class="font-body text-gray-600 text-lg mt-4">Complete one form per athlete. The form prepares a WhatsApp message for you to review and send to the organiser.</p>
+      </div>
+
+      <form id="tournament-entry-form" class="card p-6 sm:p-9 space-y-7">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="athlete-name" class="event-label">Athlete full name <span aria-hidden="true">*</span></label>
+            <input id="athlete-name" name="athleteName" type="text" required maxlength="100" autocomplete="name" class="event-control" placeholder="Name as it should appear on the entry list" />
+          </div>
+          <div>
+            <label for="contact-phone" class="event-label">Athlete or parent/guardian phone <span aria-hidden="true">*</span></label>
+            <input id="contact-phone" name="phone" type="tel" required minlength="8" maxlength="24" autocomplete="tel" class="event-control" placeholder="+254 7XX XXX XXX" />
+          </div>
+          <div>
+            <label for="athlete-email" class="event-label">Email address <span class="font-normal text-gray-500">(optional)</span></label>
+            <input id="athlete-email" name="email" type="email" maxlength="150" autocomplete="email" class="event-control" placeholder="you@example.com" />
+          </div>
+          <div>
+            <label for="club-name" class="event-label">Club or dojang <span aria-hidden="true">*</span></label>
+            <input id="club-name" name="club" type="text" required maxlength="100" autocomplete="organization" class="event-control" placeholder="Club or dojang name" />
+          </div>
+          <div>
+            <label for="age-division" class="event-label">Kyorugi age division <span class="font-normal text-gray-500">(required for Kyorugi)</span></label>
+            <select id="age-division" name="ageDivision" class="event-control">
+              <option value="">Select a division</option>
+              <option>Cadet</option>
+              <option>Junior</option>
+              <option>Under-21</option>
+              <option>Senior</option>
+            </select>
+          </div>
+          <div>
+            <label for="gender-division" class="event-label">Gender division <span class="font-normal text-gray-500">(required for selected events)</span></label>
+            <select id="gender-division" name="genderDivision" class="event-control">
+              <option value="">Select a division</option>
+              <option>Male</option>
+              <option>Female</option>
+            </select>
+          </div>
+          <div>
+            <label for="weight-class" class="event-label">Kyorugi weight category in kg <span class="font-normal text-gray-500">(if known)</span></label>
+            <input id="weight-class" name="weightClass" type="text" maxlength="20" class="event-control" placeholder="For example, -58 kg or +65 kg" />
+          </div>
+          <div>
+            <label for="poomsae-category" class="event-label">Poomsae age category <span class="font-normal text-gray-500">(required for Poomsae)</span></label>
+            <select id="poomsae-category" name="poomsaeCategory" class="event-control">
+              <option value="">Select a category</option>
+              <option>Under 30</option>
+              <option>Age 30 to 39</option>
+              <option>Cadet, ages 14 to 17</option>
+              <option>Age 10</option>
+              <option>Age 11</option>
+              <option>Age 12</option>
+              <option>Age 13</option>
+            </select>
+          </div>
+          <div>
+            <label for="coach-name" class="event-label">Coach or team manager <span class="font-normal text-gray-500">(optional)</span></label>
+            <input id="coach-name" name="coach" type="text" maxlength="100" class="event-control" placeholder="Coach or manager name" />
+          </div>
+          <div>
+            <label for="ktf-licence" class="event-label">KTF licence number <span class="font-normal text-gray-500">(optional)</span></label>
+            <input id="ktf-licence" name="ktfLicence" type="text" maxlength="50" class="event-control" placeholder="If available" />
+          </div>
+        </div>
+
+        <fieldset>
+          <legend class="event-label mb-3">Competition events <span aria-hidden="true">*</span></legend>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <label class="event-choice">
+              <input type="checkbox" name="events" value="Kyorugi" class="h-5 w-5 accent-red-brand" />
+              <span><strong class="block font-display text-xl text-navy">Kyorugi</strong><span class="font-body text-sm text-gray-600">Sparring competition</span></span>
+            </label>
+            <label class="event-choice">
+              <input type="checkbox" name="events" value="Poomsae" class="h-5 w-5 accent-red-brand" />
+              <span><strong class="block font-display text-xl text-navy">Poomsae</strong><span class="font-body text-sm text-gray-600">Patterns competition</span></span>
+            </label>
+          </div>
+          <p id="event-choice-error" class="hidden mt-3 text-sm text-red-700" role="alert">Select at least one competition event.</p>
+        </fieldset>
+
+        <div id="minor-fields" class="hidden grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="guardian-name" class="event-label">Parent or guardian full name <span aria-hidden="true">*</span></label>
+            <input id="guardian-name" name="guardianName" type="text" maxlength="100" class="event-control" />
+          </div>
+          <div>
+            <label for="guardian-phone" class="event-label">Parent or guardian phone <span aria-hidden="true">*</span></label>
+            <input id="guardian-phone" name="guardianPhone" type="tel" minlength="8" maxlength="24" class="event-control" placeholder="+254 7XX XXX XXX" />
+          </div>
+          <p class="sm:col-span-2 font-body text-sm text-gray-500">A parent or guardian must send the registration enquiry for any athlete under 18.</p>
+        </div>
+
+        <div>
+          <label for="entry-notes" class="event-label">Additional entry notes <span class="font-normal text-gray-500">(optional)</span></label>
+          <textarea id="entry-notes" name="notes" rows="3" maxlength="500" class="event-control resize-y" placeholder="Share relevant entry information. Do not include medical or other sensitive information."></textarea>
+        </div>
+
+        <label class="flex items-start gap-3 font-body text-sm text-gray-600">
+          <input id="event-consent" name="consent" type="checkbox" required class="mt-1 h-4 w-4 accent-red-brand" />
+          <span>I agree to share these details with the tournament organiser for athlete-entry follow-up. Read the <a href="/privacy" class="text-navy underline font-semibold">Privacy Notice</a>. <span aria-hidden="true">*</span></span>
+        </label>
+
+        <div class="rounded-lg bg-bluegrey p-4 font-body text-sm text-gray-600">
+          This is an athlete-entry enquiry, not a confirmed tournament entry. The website does not store your details or accept payment or document uploads. The organiser will confirm eligibility, final category, entry instructions and payment details. The KSh 1,000 fee is per participant.
+        </div>
+
+        <button type="submit" class="btn-primary w-full justify-center text-lg py-4">Prepare athlete entry message</button>
+        <p id="entry-status" class="hidden rounded-lg border border-green-700/20 bg-green-50 p-4 font-body text-sm text-green-900" role="status" aria-live="polite"></p>
+        <a id="entry-whatsapp-link" class="hidden btn-navy w-full justify-center" href="#" target="_blank" rel="noopener noreferrer">Open WhatsApp to send athlete details</a>
+      </form>
+
+      <p class="text-center font-body text-sm text-gray-500 mt-6">Registration opens 1 February 2027. Do not send payment until you receive verified instructions from the organiser.</p>
+    </div>
+  </section>
+
+  <style>
+    .event-label { display: block; margin-bottom: .4rem; color: #1f3a5f; font-family: Inter, sans-serif; font-size: .9rem; font-weight: 700; }
+    .event-label [aria-hidden="true"] { color: #b3202a; }
+    .event-control { width: 100%; min-height: 3rem; border: 1px solid #cbd5e1; border-radius: .4rem; background: #fff; padding: .75rem .9rem; color: #172b45; font: inherit; }
+    .event-control:focus { border-color: #1f3a5f; outline: 3px solid rgba(31,58,95,.18); }
+    .event-choice { display: flex; align-items: center; gap: .85rem; min-height: 5rem; border: 1px solid #dbe3ec; border-radius: .7rem; background: #fff; padding: .9rem; cursor: pointer; }
+    .event-choice:has(input:checked) { border-color: #b3202a; background: #fff8f8; box-shadow: 0 0 0 2px rgba(179,32,42,.12); }
+  </style>
+
+  <script>
+    const form = document.getElementById('tournament-entry-form') as HTMLFormElement | null;
+    const ageDivision = document.getElementById('age-division') as HTMLSelectElement | null;
+    const genderDivision = document.getElementById('gender-division') as HTMLSelectElement | null;
+    const poomsaeCategory = document.getElementById('poomsae-category') as HTMLSelectElement | null;
+    const minorFields = document.getElementById('minor-fields');
+    const guardianName = document.getElementById('guardian-name') as HTMLInputElement | null;
+    const guardianPhone = document.getElementById('guardian-phone') as HTMLInputElement | null;
+    const eventError = document.getElementById('event-choice-error');
+    const status = document.getElementById('entry-status');
+    const whatsappLink = document.getElementById('entry-whatsapp-link') as HTMLAnchorElement | null;
+
+    const getSelectedEvents = () => Array.from(form?.querySelectorAll<HTMLInputElement>('input[name="events"]:checked') ?? []);
+
+    const updateEntryFields = () => {
+      const selectedEvents = getSelectedEvents().map((input) => input.value);
+      const enteringKyorugi = selectedEvents.includes('Kyorugi');
+      const enteringPoomsae = selectedEvents.includes('Poomsae');
+      if (ageDivision) ageDivision.required = enteringKyorugi;
+      if (genderDivision) genderDivision.required = selectedEvents.length > 0;
+      if (poomsaeCategory) poomsaeCategory.required = enteringPoomsae;
+
+      const youthPoomsae = ['Cadet, ages 14 to 17', 'Age 10', 'Age 11', 'Age 12', 'Age 13'];
+      const needsGuardian = (enteringKyorugi && (ageDivision?.value === 'Cadet' || ageDivision?.value === 'Junior'))
+        || (enteringPoomsae && youthPoomsae.includes(poomsaeCategory?.value ?? ''));
+      minorFields?.classList.toggle('hidden', !needsGuardian);
+      if (guardianName) guardianName.required = Boolean(needsGuardian);
+      if (guardianPhone) guardianPhone.required = Boolean(needsGuardian);
+      if (!needsGuardian) {
+        if (guardianName) guardianName.value = '';
+        if (guardianPhone) guardianPhone.value = '';
+      }
+    };
+
+    ageDivision?.addEventListener('change', updateEntryFields);
+    poomsaeCategory?.addEventListener('change', updateEntryFields);
+    form?.querySelectorAll<HTMLInputElement>('input[name="events"]').forEach((input) => {
+      input.addEventListener('change', updateEntryFields);
+    });
+    updateEntryFields();
+
+    form?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const selectedEvents = getSelectedEvents();
+      if (selectedEvents.length === 0) {
+        eventError?.classList.remove('hidden');
+        form.querySelector<HTMLInputElement>('input[name="events"]')?.focus();
+        return;
+      }
+      eventError?.classList.add('hidden');
+      const data = new FormData(form);
+      const lines = [
+        'Hello, I would like to submit an athlete registration enquiry for the Mount Kenya International Taekwondo Open Tournament 2027.',
+        '',
+        `Athlete: ${data.get('athleteName')}`,
+        `Phone: ${data.get('phone')}`,
+        `Club or dojang: ${data.get('club')}`,
+        `Competition events: ${selectedEvents.map((input) => input.value).join(', ')}`,
+      ];
+      if (data.get('email')) lines.push(`Email: ${data.get('email')}`);
+      if (data.get('ageDivision')) lines.push(`Kyorugi age division: ${data.get('ageDivision')}`);
+      if (data.get('genderDivision')) lines.push(`Kyorugi division: ${data.get('genderDivision')}`);
+      if (data.get('weightClass')) lines.push(`Kyorugi weight category: ${data.get('weightClass')}`);
+      if (data.get('poomsaeCategory')) lines.push(`Poomsae category: ${data.get('poomsaeCategory')}`);
+      if (data.get('coach')) lines.push(`Coach or team manager: ${data.get('coach')}`);
+      if (data.get('ktfLicence')) lines.push(`KTF licence: ${data.get('ktfLicence')}`);
+      if (data.get('guardianName')) lines.push(`Parent or guardian: ${data.get('guardianName')}`);
+      if (data.get('guardianPhone')) lines.push(`Parent or guardian phone: ${data.get('guardianPhone')}`);
+      if (data.get('notes')) lines.push(`Additional notes: ${data.get('notes')}`);
+      lines.push('', 'Please confirm the eligibility, final category, registration requirements and verified payment instructions.');
+
+      if (whatsappLink) {
+        whatsappLink.href = `https://wa.me/254754151315?text=${encodeURIComponent(lines.join('\n'))}`;
+        whatsappLink.classList.remove('hidden');
+      }
+      if (status) {
+        status.textContent = 'Your athlete-entry message is ready. Open WhatsApp, review the details and press Send. Your tournament entry is not confirmed until the organiser replies and completes the official registration process.';
+        status.classList.remove('hidden');
+      }
+      whatsappLink?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+</BaseLayout>

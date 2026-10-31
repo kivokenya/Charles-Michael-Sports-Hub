@@ -160,8 +160,8 @@ const provisionalSchedule = [
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/contact#open" class="btn-primary text-xl px-8 py-4"
-                    >Register Interest</a
+                <a href="/tournament-register" class="btn-primary text-xl px-8 py-4"
+                    >Athlete Registration</a
                 >
                 <a href="#at-a-glance" class="btn-secondary text-xl px-8 py-4"
                     >View Details ↓</a
@@ -703,8 +703,8 @@ const provisionalSchedule = [
                 <p class="font-body text-blue-200 mb-6">
                     Registration opens 1 February 2027. Entry fee: KSh 1,000 per participant.
                 </p>
-                <a href="/contact#open" class="btn-primary text-xl px-10 py-4"
-                    >Register Interest Now →</a
+                <a href="/tournament-register" class="btn-primary text-xl px-10 py-4"
+                    >Start Athlete Registration</a
                 >
             </div>
         </div>
@@ -797,6 +797,25 @@ const provisionalSchedule = [
                     loading="lazy"
                 />
             </a>
+            <p class="font-body text-gray-600 max-w-2xl mx-auto mb-6">
+                Sponsor logos will be added here as partnerships are confirmed. The Hub logo is shown as a temporary placeholder and does not represent a sponsor.
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 mb-10">
+                {Array.from({ length: 5 }, (_, i) => (
+                    <div class="relative min-h-36 rounded-lg border border-dashed border-gray-300 bg-gradient-to-br from-bluegrey to-white p-4 flex flex-col items-center justify-center shadow-sm">
+                        <img
+                            src="/images/sports-hub-logo.webp"
+                            alt=""
+                            class="w-16 h-20 object-contain opacity-50"
+                            loading="lazy"
+                        />
+                        <span class="mt-2 text-center font-body text-xs font-semibold uppercase tracking-wide text-gray-500">
+                            Sponsor logo space {i + 1}
+                        </span>
+                        <span class="font-body text-xs text-gray-400">Logo to be announced</span>
+                    </div>
+                ))}
+            </div>
             <a href="/sponsors" class="btn-navy text-lg px-8 py-3"
                 >Become a Sponsor →</a
             >
