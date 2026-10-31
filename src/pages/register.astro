@@ -196,6 +196,10 @@ const sports = [
       guardianFields?.classList.toggle('hidden', !needsGuardian);
       if (guardianName) guardianName.required = Boolean(needsGuardian);
       if (guardianPhone) guardianPhone.required = Boolean(needsGuardian);
+      if (!needsGuardian) {
+        if (guardianName) guardianName.value = '';
+        if (guardianPhone) guardianPhone.value = '';
+      }
     };
 
     ageGroup?.addEventListener('change', updateGuardianFields);
