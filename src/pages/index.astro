@@ -42,16 +42,19 @@ const schema = {
     <!-- Red accent bar -->
     <div class="absolute top-0 left-0 w-2 h-full bg-red-brand"></div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 grid lg:grid-cols-2 gap-12 items-center">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
 
       <!-- Text -->
       <div class="text-white">
-        <p class="font-display font-semibold text-red-brand text-xl uppercase tracking-widest mb-4 animate-fade-in">Karibu — Welcome</p>
-        <h1 class="font-display font-black text-6xl sm:text-7xl lg:text-8xl leading-none mb-6">
+        <p class="font-display font-semibold text-red-brand text-lg sm:text-xl uppercase tracking-widest mb-4 animate-fade-in">Karibu — Welcome</p>
+        <h1 class="font-display font-black text-5xl sm:text-6xl lg:text-7xl leading-none mb-6">
+          Charles Michael<br/>Sports Hub
+        </h1>
+        <h2 class="font-display font-black text-4xl sm:text-5xl lg:text-6xl leading-none mb-6">
           Train Hard.<br/>
           <span class="text-red-brand">Compete</span><br/>
           with Pride.
-        </h1>
+        </h2>
         <p class="font-body text-blue-100 text-xl leading-relaxed mb-10 max-w-xl">
           Kenya's newest sports hub, based in Limuru. We create opportunities for athletes to train, compete and grow, with taekwondo at the heart of our flagship programme.
         </p>
@@ -65,11 +68,14 @@ const schema = {
         </div>
       </div>
 
-      <div class="hidden lg:block">
+      <div class="relative flex justify-center">
+        <div class="absolute inset-x-8 top-8 bottom-8 rounded-full bg-white/5 blur-3xl" aria-hidden="true"></div>
         <img
-          src="/images/training-team-wide.webp"
-          alt="Taekwondo athletes training together at the Limuru sports hub"
-          class="w-full aspect-[4/3] object-cover rounded-lg shadow-2xl border-4 border-red-brand/30"
+          src="/images/footer-logo.webp"
+          alt="Charles Michael Sports Hub — Training. Tournament."
+          width="512"
+          height="763"
+          class="relative z-10 w-full max-w-[19rem] sm:max-w-[23rem] lg:max-w-[25rem] max-h-[34rem] object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
           fetchpriority="high"
           decoding="async"
         />
