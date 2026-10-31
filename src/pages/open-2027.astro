@@ -23,7 +23,7 @@ const schema = {
         name: "Charles Michael Sports Hub",
     },
     description:
-        "A two-day international taekwondo open tournament for junior and senior athletes, held Saturday 10 and Sunday 11 April 2027 in Limuru under World Taekwondo rules.",
+        "A two-day international taekwondo open tournament for junior and senior athletes, held Saturday 10 and Sunday 11 April 2027 in Limuru under World Taekwondo Federation (WTF) rules.",
     image: "https://www.charlesmsports.com/images/mount-kenya-open-logo-transparent.webp",
 };
 
@@ -363,10 +363,10 @@ const provisionalSchedule = [
                     <ul class="space-y-4">
                         {
                             [
-                                "World Taekwondo (WT) competition rules apply throughout",
+                                "World Taekwondo Federation (WTF) competition rules apply throughout",
                                 "Electronic scoring systems used for kyorugi",
                                 "Certified referees and judges officiate all bouts",
-                                "Protests handled per WT protest procedures",
+                                "Protests handled per World Taekwondo Federation (WTF) procedures",
                                 "Anti-doping policies as per KTF guidelines",
                             ].map((rule) => (
                                 <li class="flex items-start gap-3 font-body text-gray-700">
@@ -386,8 +386,8 @@ const provisionalSchedule = [
                     <ul class="space-y-4">
                         {
                             [
-                                "Approved WT dobok (uniform)",
-                                "WT-approved hogu (trunk protector)",
+                                "Approved World Taekwondo Federation (WTF) dobok (uniform)",
+                                "World Taekwondo Federation (WTF)-approved hogu (trunk protector)",
                                 "Head guard, groin guard, forearm and shin guards",
                                 "Mouth guard",
                                 "Electronic scoring sensors",
@@ -651,8 +651,8 @@ const provisionalSchedule = [
                             role: "Athletes",
                             icon: "🥋",
                             steps: [
-                                "Complete the online registration form (opens [PLACEHOLDER: date])",
-                                "Pay the entry fee via M-Pesa: [PLACEHOLDER: Paybill/Till number]",
+                                "Complete the online registration form from 1 February 2027",
+                                "Pay the KSh 1,000 entry fee per participant using the organiser's verified payment instructions",
                                 "Upload proof of payment and KTF licence (if applicable)",
                                 "Receive confirmation email with your athlete number",
                             ],
@@ -673,8 +673,8 @@ const provisionalSchedule = [
                             steps: [
                                 "KTF-certified referees and judges invited by the organiser",
                                 "Contact us to express interest if you hold KTF certification",
-                                "Accommodation and transport support: [PLACEHOLDER: details]",
-                                "Accreditation at venue: [PLACEHOLDER: date/time]",
+                                "Accommodation and transport arrangements will be shared with appointed officials",
+                                "Accreditation details will be shared in official event communications",
                             ],
                         },
                     ].map((group, i) => (
@@ -702,8 +702,7 @@ const provisionalSchedule = [
             </div>
             <div class="text-center mt-12 reveal">
                 <p class="font-body text-blue-200 mb-6">
-                    Full registration opens [PLACEHOLDER: date]. Entry fees:
-                    [PLACEHOLDER: KES amount]
+                    Registration opens 1 February 2027. Entry fee: KSh 1,000 per participant.
                 </p>
                 <a href="/contact#open" class="btn-primary text-xl px-10 py-4"
                     >Register Interest Now →</a
@@ -791,22 +790,14 @@ const provisionalSchedule = [
                 <p class="section-subtitle">Our Partners</p>
                 <h2 class="section-title">Event Sponsors</h2>
             </div>
-            <div
-                class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 mb-10 reveal"
-            >
-                {
-                    Array(4)
-                        .fill(null)
-                        .map((_, i) => (
-                            <div class="placeholder-img aspect-video rounded-lg border border-gray-200 p-4 flex-col gap-1">
-                                <div class="text-2xl mb-1">🏢</div>
-                                <p class="font-body text-xs">
-                                    [PLACEHOLDER: Sponsor {i + 1} logo]
-                                </p>
-                            </div>
-                        ))
-                }
-            </div>
+            <a href="/sponsors" class="block max-w-5xl mx-auto mb-10 reveal rounded-xl overflow-hidden shadow-xl focus-visible:outline focus-visible:outline-4 focus-visible:outline-red-brand">
+                <img
+                    src="/images/sponsor-the-open.svg"
+                    alt="Sponsor the Open. Back young athletes and build stronger communities. Explore sponsorship opportunities."
+                    class="w-full h-auto"
+                    loading="lazy"
+                />
+            </a>
             <a href="/sponsors" class="btn-navy text-lg px-8 py-3"
                 >Become a Sponsor →</a
             >
@@ -891,9 +882,9 @@ const provisionalSchedule = [
                 Official Bulletin
             </h2>
             <p class="font-body text-blue-100 text-lg mb-8">
-                Download the event bulletin for confirmed event details,
-                planned divisions and spectator information. Registration,
-                entry fees and final technical arrangements will be announced separately.
+                Download the event bulletin for event details, planned divisions,
+                spectator information and registration fees. Final technical arrangements
+                remain subject to confirmation.
             </p>
             <a
                 href="/documents/mount-kenya-international-taekwondo-open-2027-bulletin.pdf"
