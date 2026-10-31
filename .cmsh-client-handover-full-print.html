@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Charles Michael Sports Hub | Website Handover Overview</title>
+  <style>
+    @page { size: A4; margin: 0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: #233247; font: 10pt/1.42 Arial, Helvetica, sans-serif; background: #e8edf2; }
+    .sheet { width: 210mm; height: 297mm; padding: 14mm 15mm 15mm; margin: 0 auto; position: relative; overflow: hidden; background: #fff; page-break-after: always; }
+    .sheet:last-child { page-break-after: auto; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { color: #1f3a5f; }
+    h1 { margin-bottom: 5mm; font-size: 32pt; line-height: 1.02; letter-spacing: -.6pt; }
+    h2 { margin-bottom: 3mm; font-size: 22pt; line-height: 1.1; }
+    h3 { margin-bottom: 2mm; font-size: 13pt; line-height: 1.2; }
+    p { margin-bottom: 3mm; }
+    a { color: inherit; text-decoration: none; }
+    .eyebrow { margin-bottom: 2mm; color: #b3202a; font-size: 8pt; font-weight: 700; letter-spacing: 1.7pt; text-transform: uppercase; }
+    .topline { display: flex; align-items: center; justify-content: space-between; padding-bottom: 4mm; margin-bottom: 9mm; border-bottom: 1px solid #dce3eb; }
+    .brand { display: flex; align-items: center; gap: 3mm; color: #1f3a5f; font-size: 11pt; font-weight: 700; }
+    .brand img { width: 14mm; height: 18mm; object-fit: contain; }
+    .topline span { color: #64748b; font-size: 8pt; }
+    .cover { padding-top: 12mm; color: #fff; background: #1f3a5f; }
+    .cover h1, .cover h2 { color: #fff; }
+    .cover .eyebrow { color: #ff7b82; }
+    .cover-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 10mm; align-items: center; }
+    .cover h1 { font-size: 37pt; }
+    .cover-copy { max-width: 103mm; color: #e5edf6; font-size: 12pt; line-height: 1.55; }
+    .cover-logo { width: 34mm; height: 44mm; object-fit: contain; margin-bottom: 7mm; }
+    .hero-photo { width: 100%; height: 104mm; object-fit: cover; object-position: center 24%; border: 2mm solid rgba(255,255,255,.15); border-radius: 4mm; }
+    .cover-ribbon { height: 2mm; margin: 10mm 0 8mm; background: #b3202a; }
+    .cover-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+    .cover-stat { padding: 4mm; border: 1px solid rgba(255,255,255,.2); border-radius: 2mm; background: rgba(255,255,255,.07); }
+    .cover-stat strong { display: block; margin-bottom: 1mm; color: #fff; font-size: 13pt; }
+    .cover-stat span { color: #cbd8e7; font-size: 8pt; }
+    .cover-foot { position: absolute; right: 15mm; bottom: 10mm; left: 15mm; display: flex; justify-content: space-between; color: #b9c9dc; font-size: 8pt; }
+    .intro { max-width: 175mm; margin-bottom: 7mm; color: #58677a; font-size: 11pt; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; }
+    .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+    .card { padding: 5mm; border: 1px solid #dce3eb; border-radius: 2.5mm; background: #f7f9fb; }
+    .card p:last-child { margin-bottom: 0; }
+    .card h3 { margin-bottom: 2mm; }
+    .card p, .card li { color: #526174; font-size: 9pt; }
+    .card ul { margin: 0; padding-left: 4mm; }
+    .card li { margin-bottom: 1.2mm; }
+    .pill { display: inline-block; padding: 1.2mm 2.5mm; border-radius: 10mm; color: #1f3a5f; background: #e6edf5; font-size: 7.5pt; font-weight: 700; }
+    .red { color: #b3202a; }
+    .blue { color: #1f3a5f; }
+    .muted { color: #64748b; }
+    .small { font-size: 8pt; }
+    .section { margin-bottom: 7mm; }
+    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 6mm; margin-bottom: 4mm; }
+    .section-head p { margin-bottom: 0; color: #64748b; font-size: 8pt; }
+    .list { margin: 0; padding-left: 4mm; }
+    .list li { margin-bottom: 2mm; color: #526174; }
+    .photo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 4mm 0 2mm; }
+    .photo-card { overflow: hidden; border: 1px solid #dce3eb; border-radius: 2mm; background: #f7f9fb; }
+    .photo-card img { display: block; width: 100%; height: 43mm; object-fit: cover; object-position: center 20%; }
+    .photo-card div { padding: 2.5mm 3mm; }
+    .photo-card strong { display: block; color: #1f3a5f; font-size: 9pt; }
+    .photo-card span { color: #64748b; font-size: 7.5pt; }
+    .banner { display: grid; grid-template-columns: 1fr 45mm; gap: 4mm; align-items: center; padding: 6mm; border-radius: 3mm; color: #fff; background: #1f3a5f; }
+    .banner h2, .banner h3 { margin-bottom: 2mm; color: #fff; }
+    .banner p { margin-bottom: 0; color: #dbe6f2; font-size: 9pt; }
+    .event-logo { width: 43mm; height: 43mm; object-fit: contain; }
+    .fact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 4mm 0; }
+    .fact { padding: 3mm; border-left: 1mm solid #b3202a; background: #f2f5f8; }
+    .fact strong { display: block; color: #1f3a5f; font-size: 11pt; }
+    .fact span { color: #64748b; font-size: 7.5pt; }
+    .note { padding: 4mm; border-left: 1.2mm solid #b3202a; background: #fff4f4; color: #62363a; font-size: 8.5pt; }
+    .callout { padding: 5mm; border-radius: 2mm; color: #fff; background: #1f3a5f; }
+    .callout h3 { color: #fff; }
+    .callout p, .callout li { color: #dbe6f2; font-size: 8.5pt; }
+    .callout .list { padding-left: 4mm; }
+    .checklist { list-style: none; margin: 0; padding: 0; }
+    .checklist li { position: relative; padding-left: 6mm; margin-bottom: 3mm; color: #526174; font-size: 9pt; }
+    .checklist li:before { content: ""; position: absolute; top: 1.5mm; left: 0; width: 2.7mm; height: 2.7mm; border: .5mm solid #b3202a; border-radius: 50%; }
+    .footer { position: absolute; right: 15mm; bottom: 8mm; left: 15mm; display: flex; justify-content: space-between; padding-top: 2.5mm; border-top: 1px solid #dce3eb; color: #738195; font-size: 7.5pt; }
+    .footer strong { color: #1f3a5f; }
+    .contact-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; padding: 4mm 5mm; border-radius: 2mm; color: #fff; background: #1f3a5f; }
+    .contact-bar strong { display: block; margin-bottom: 1mm; font-size: 10pt; }
+    .contact-bar span { color: #dbe6f2; font-size: 8pt; }
+    .route-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2.5mm; }
+    .route { padding: 2mm; border: 1px solid #dce3eb; border-radius: 2mm; background: #fff; }
+    .route strong { display: block; color: #1f3a5f; font-size: 8.5pt; }
+    .route span { color: #64748b; font-size: 7.2pt; }
+    .spacer { height: 2mm; }
+    @media screen {
+      body { padding: 8mm 0; }
+      .sheet { margin-bottom: 8mm; box-shadow: 0 3mm 12mm rgba(20,35,55,.16); }
+    }
+    @media print { body { background: #fff; } }
+  </style>
+</head>
+<body>
+  <section class="sheet cover">
+    <div class="topline" style="border-color:rgba(255,255,255,.2)">
+      <div class="brand" style="color:#fff"><img src="public/images/sports-hub-logo.webp" alt="">CHARLES MICHAEL SPORTS HUB</div>
+      <span style="color:#cbd8e7">CLIENT HANDOVER · 1 NOVEMBER 2026</span>
+    </div>
+    <div class="cover-grid">
+      <div>
+        <img class="cover-logo" src="public/images/footer-logo.webp" alt="Charles Michael Sports Hub logo">
+        <p class="eyebrow">Website overview &amp; capabilities</p>
+        <h1>A place to train,<br>compete and grow.</h1>
+        <p class="cover-copy">A digital home for Charles Michael Sports Hub: a community sports organisation in Limuru, with taekwondo as its flagship programme and a broader multi-sport vision for young people and families.</p>
+        <div class="cover-ribbon"></div>
+        <p class="cover-copy" style="font-size:10pt">This guide summarises the website, visitor journeys, tournament information, sponsorship materials and the follow-up items to complete before a full operational handover.</p>
+      </div>
+      <div>
+        <img class="hero-photo" src="public/images/dojo-team.webp" alt="CMSH athletes and coaches training together">
+      </div>
+    </div>
+    <div class="cover-stats">
+      <div class="cover-stat"><strong>Taekwondo first</strong><span>Established flagship sport and tournament focus</span></div>
+      <div class="cover-stat"><strong>More ways to join</strong><span>Multi-sport interest across seven activities</span></div>
+      <div class="cover-stat"><strong>Mount Kenya Open</strong><span>Two-day tournament planned for April 2027</span></div>
+    </div>
+    <div class="cover-foot"><span>www.charlesmsports.com</span><span>Limuru · Kiambu County · Kenya</span></div>
+  </section>
+
+  <section class="sheet">
+    <div class="topline">
+      <div class="brand"><img src="public/images/sports-hub-logo.webp" alt="">CHARLES MICHAEL SPORTS HUB</div>
+      <span>01 · THE ORGANISATION &amp; THE WEBSITE</span>
+    </div>
+    <p class="eyebrow">A sports hub for the community</p>
+    <h2>What the site represents</h2>
+    <p class="intro">Charles Michael Sports Hub (CMSH) is presented as a Limuru-based community sports organisation creating opportunities for children, young people and adults to take part, develop skills and progress. Taekwondo is the established flagship. Athletics, martial arts, boxing, football, darts and board games are described as a developing wider offer, with availability to be confirmed.</p>
+
+    <div class="two-col section">
+      <article class="card">
+        <h3>Mission &amp; values</h3>
+        <p>Sport is framed as a pathway to discipline, confidence, respect, fitness and perseverance, as well as a route to competition. The site highlights inclusion, safety, integrity and community partnership.</p>
+        <span class="pill">Limuru · Kiambu County</span>
+      </article>
+      <article class="card">
+        <h3>Founding team</h3>
+        <p><strong>Michael Charles James Karuga</strong> is identified as founder: a 2nd Dan black belt with nine years of coaching experience and World Taekwondo Federation (WTF) and Kenya Taekwondo Federation (KTF) certificates.</p>
+        <p><strong>Moses Kamau</strong> is a co-founder and taekwondo black belt. <strong>Ngugi Kinyanjui</strong> is co-founder and General Manager, with a focus on youth empowerment, programmes, organisational leadership and community development.</p>
+      </article>
+    </div>
+    <div class="photo-strip">
+      <article class="photo-card"><img src="public/images/michael-charles-founder.webp" alt="Michael Charles James Karuga"><div><strong>Michael Charles James Karuga</strong><span>Founder · Taekwondo coach</span></div></article>
+      <article class="photo-card"><img src="public/images/moses-kamau-dojo.webp" alt="Moses Kamau in the dojang"><div><strong>Moses Kamau</strong><span>Co-founder · Black belt</span></div></article>
+      <article class="photo-card"><img src="public/images/ngugi-kinyanjui.webp" alt="Ngugi Kinyanjui"><div><strong>Ngugi Kinyanjui</strong><span>Co-founder · General Manager</span></div></article>
+    </div>
+
+    <div class="note">The website distinguishes the established taekwondo programme from other sports being developed in stages, so visitors are encouraged to ask about current availability.</div>
+    <div class="footer"><span><strong>CMSH</strong> · Website handover overview</span><span>Prepared 1 November 2026 · Page 2 of 6</span></div>
+  </section>
+
+  <section class="sheet">
+    <div class="topline">
+      <div class="brand"><img src="public/images/sports-hub-logo.webp" alt="">CHARLES MICHAEL SPORTS HUB</div>
+      <span>02 · SITE MAP &amp; VISITOR JOURNEYS</span>
+    </div>
+    <p class="eyebrow">The visitor experience</p>
+    <h2>A clear route from discovery to enquiry</h2>
+    <p class="intro">The navigation brings together the organisation's story, programmes, tournament, sponsorship, updates and contact information, with mobile-friendly routes into the main enquiry actions.</p>
+    <div class="route-grid section">
+      <div class="route"><strong>Home</strong><span>Hub identity, sports vision, founder feature and flagship event</span></div>
+      <div class="route"><strong>About</strong><span>Mission, leadership, values and long-term roadmap</span></div>
+      <div class="route"><strong>Programmes</strong><span>Taekwondo pathways, school and holiday opportunities</span></div>
+      <div class="route"><strong>Register</strong><span>General interest form for the Hub's sports offer</span></div>
+      <div class="route"><strong>Mount Kenya Open</strong><span>Event, competition, awards, schedule and spectator details</span></div>
+      <div class="route"><strong>Tournament Register</strong><span>Dedicated athlete-entry enquiry for Kyorugi/Poomsae</span></div>
+      <div class="route"><strong>Sponsors</strong><span>Packages, sponsorship pack and sponsor enquiry form</span></div>
+      <div class="route"><strong>Pathway / News</strong><span>International ambition, updates and community gallery</span></div>
+      <div class="route"><strong>Contact</strong><span>Phone, WhatsApp, email and Limuru location</span></div>
+      <div class="route"><strong>Safeguarding</strong><span>Safeguarding information and participation guidance</span></div>
+      <div class="route"><strong>Privacy / Cookies</strong><span>Privacy notice and cookie information</span></div>
+      <div class="route"><strong>Terms / 404</strong><span>Terms of use and custom not-found page</span></div>
+    </div>
+    <div class="section">
+      <div class="section-head"><div><p class="eyebrow">What visitors can do</p><h3 style="font-size:17pt">Four practical journeys</h3></div><p>Responsive layout for desktop and mobile</p></div>
+      <div class="two-col">
+        <article class="card">
+          <h3>Explore programmes</h3>
+          <ul>
+            <li>Review junior taekwondo (ages 8–17) and adult training.</li>
+            <li>Learn about holiday camps, school partnerships and future coaching/referee development.</li>
+            <li>Ask about current schedules and fees; these are confirmed by the Hub.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Register interest in the Hub</h3>
+          <ul>
+            <li>Select one or more sports and enter contact and age-group details.</li>
+            <li>Minors are prompted for parent/guardian contact details.</li>
+            <li>The site prepares a WhatsApp message for review and sending to the Hub.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Send a tournament entry enquiry</h3>
+          <ul>
+            <li>Enter athlete, club, event and category details for Kyorugi and/or Poomsae.</li>
+            <li>Required fields adapt to the selected event and youth categories request guardian details.</li>
+            <li>The athlete or guardian opens WhatsApp, reviews and sends the enquiry.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Review sponsorship information</h3>
+          <ul>
+            <li>Compare Gold, Silver and Bronze packages, benefits and in-kind options.</li>
+            <li>Download the separate three-page sponsorship pack.</li>
+            <li>View five temporary logo spaces on the event page until sponsors are confirmed.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+    <div class="footer"><span><strong>CMSH</strong> · Website handover overview</span><span>Prepared 1 November 2026 · Page 3 of 6</span></div>
+  </section>
+
+  <section class="sheet">
+    <div class="topline">
+      <div class="brand"><img src="public/images/sports-hub-logo.webp" alt="">CHARLES MICHAEL SPORTS HUB</div>
+      <span>03 · FLAGSHIP EVENT &amp; COMPETITION</span>
+    </div>
+    <div class="banner section">
+      <div><p class="eyebrow" style="color:#ff858a">Flagship event</p><h2>Mount Kenya International<br>Taekwondo Open Tournament</h2><p>10–11 April 2027 · Limuru, Kiambu County · Athlete entry fee shown as KSh 1,000 per participant · Registration opens 1 February 2027.</p></div>
+      <img class="event-logo" src="public/images/mount-kenya-open-logo-transparent.webp" alt="Mount Kenya Open tournament logo">
+    </div>
+
+    <div class="fact-row">
+      <div class="fact"><strong>Kyorugi</strong><span>Olympic-style elimination bracket: bout winners advance.</span></div>
+      <div class="fact"><strong>Poomsae</strong><span>Judged by performance scores, not an elimination bracket.</span></div>
+      <div class="fact"><strong>Audience</strong><span>Planning estimates on the site: 100+ athletes and 1,000+ spectators.</span></div>
+    </div>
+
+    <div class="two-col section">
+      <article class="card">
+        <h3>Awards &amp; prize schedule</h3>
+        <p>The event page includes team and junior-team cash awards through 10th place, individual-player prizes, adult Poomsae prizes, youth medals/certificates, best-player and coach awards, and referee awards.</p>
+        <p><strong>Headline examples:</strong> senior team 1st KSh 250,000; junior team 1st KSh 100,000; individual player 1st KSh 15,000; best coach 1st KSh 20,000; best referee 1st KSh 15,000.</p>
+      </article>
+      <article class="card">
+        <h3>Event information on the site</h3>
+        <p>Visitors can review event divisions, provisional schedule, registration guidance, spectator information, sponsor opportunities and the technical format. A Google Maps search link points to Limuru Constituency rather than a confirmed venue pin.</p>
+      </article>
+    </div>
+    <div class="note"><strong>Technical and approval note:</strong> The Olympic-style wording describes the Kyorugi bracket format only. It does not claim Olympic or federation sanction. The event regulations still need to confirm the draw, byes, any repechage, medal bouts and applicable technical rules. Schedule and venue details remain subject to organiser confirmation.</div>
+    <div class="footer"><span><strong>CMSH</strong> · Website handover overview</span><span>Prepared 1 November 2026 · Page 4 of 6</span></div>
+  </section>
+
+  <section class="sheet">
+    <div class="topline">
+      <div class="brand"><img src="public/images/sports-hub-logo.webp" alt="">CHARLES MICHAEL SPORTS HUB</div>
+      <span>03 · SPONSORSHIP &amp; PLATFORM DELIVERY</span>
+    </div>
+    <div class="section">
+      <p class="eyebrow">Partnership proposition</p>
+      <h2>Built to welcome supporters</h2>
+      <p class="intro">The sponsor area connects the event to potential partners through clear package levels, recognition benefits and a downloadable pack. The five spaces beneath the tournament banner are temporary CMSH-logo placeholders and are expressly not confirmed sponsors.</p>
+      <div class="three-col">
+        <article class="card"><span class="pill">TITLE SPONSOR</span><h3 style="margin-top:3mm">Gold · KSh 250,000</h3><p>Title billing, prominent event branding, social media, venue exposure, VIP passes and post-event reporting.</p></article>
+        <article class="card"><span class="pill">OFFICIAL SPONSOR</span><h3 style="margin-top:3mm">Silver · KSh 150,000</h3><p>Event banner/backdrop, event T-shirts, social announcements, booth space, VIP passes and event website visibility.</p></article>
+        <article class="card"><span class="pill">SUPPORTING SPONSOR</span><h3 style="margin-top:3mm">Bronze · KSh 75,000</h3><p>Main banner, social announcement, VIP passes, programme acknowledgement and website visibility.</p></article>
+      </div>
+      <p class="small muted" style="margin-top:3mm">Bespoke and in-kind contributions are also invited. The online sponsorship pack includes planning estimates; attendance figures are estimates, not guarantees.</p>
+    </div>
+
+    <div class="two-col section">
+      <article class="card">
+        <h3>Platform &amp; technical foundations</h3>
+        <ul>
+          <li>Astro-based static site; production build publishes files from <strong>dist</strong>.</li>
+          <li>Responsive layouts, branded navigation, mobile menu and contact shortcuts.</li>
+          <li>Page titles/descriptions, social-sharing metadata, organization/event structured data and sitemap.</li>
+          <li>Privacy, cookie, terms and safeguarding pages are part of the site.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Operational scope to understand</h3>
+        <ul>
+          <li>There is no admin dashboard, database or CMS for editing content.</li>
+          <li>Hub and athlete forms do not save entries, accept payments or receive document uploads.</li>
+          <li>The athlete form is an enquiry, not official entry confirmation; the organiser completes registration.</li>
+          <li>Club/team and officials are described on the event page, but do not have dedicated online submission flows.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="note">The website is a public information and enquiry platform, not an event-management system. Content and enquiry follow-up remain the Hub's responsibility; significant updates require a code/content release.</div>
+    <div class="footer"><span><strong>CMSH</strong> · Website handover overview</span><span>Prepared 1 November 2026 · Page 5 of 6</span></div>
+  </section>
+
+  <section class="sheet">
+    <div class="topline">
+      <div class="brand"><img src="public/images/sports-hub-logo.webp" alt="">CHARLES MICHAEL SPORTS HUB</div>
+      <span>04 · CLIENT HANDOVER ACTION PLAN</span>
+    </div>
+    <p class="eyebrow">From website to live operations</p>
+    <h2>Recommended client action plan</h2>
+    <p class="intro">The public site and enquiry flows are in place. The following owner-led confirmations and technical setup will help ensure the experience matches what the Hub can deliver.</p>
+
+    <div class="callout section">
+      <h3>High priority: make sponsor enquiries work</h3>
+      <p>The sponsorship form submits to <code>/api/sponsor</code>, but this repository contains no API handler for that route. Implement the endpoint, select the receiving mailbox/service, deploy it and test successful and failed submissions before relying on the form or its two-business-day response message.</p>
+    </div>
+
+    <div class="two-col section">
+      <article class="card">
+        <h3>Event and registration readiness</h3>
+        <ul class="list">
+          <li>Confirm the physical venue/address and publish a precise map pin and directions.</li>
+          <li>Approve event dates, schedule, divisions, weight categories, event rules, draw and officials with the organising and technical authorities.</li>
+          <li>Confirm the advertised prizes, eligibility/award conditions, KSh 1,000 fee and verified payment instructions.</li>
+          <li>Agree who responds to athlete/guardian WhatsApp enquiries and how official entries and confirmations are completed.</li>
+          <li>Build separate club/team and officials flows if online submission is required for those groups.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Brand, content and governance</h3>
+        <ul class="list">
+          <li>Replace the five temporary sponsor-logo spaces only after partner agreements and approved artwork are available.</li>
+          <li>Replace or remove placeholder Facebook, Instagram and X links.</li>
+          <li>Confirm contact phone/email, training times, fees and which non-taekwondo activities are actually available.</li>
+          <li>Review privacy, safeguarding, terms and cookie content, particularly before collecting information from children.</li>
+          <li>Set a named owner for enquiries, website updates, event notices and privacy requests.</li>
+        </ul>
+      </article>
+    </div>
+
+    <div class="fact-row">
+      <div class="fact"><strong>WhatsApp forms</strong><span>Visitor reviews and sends; CMSH follows up manually.</span></div>
+      <div class="fact"><strong>Static site</strong><span>No CMS or editing dashboard; content updates require a release.</span></div>
+      <div class="fact"><strong>Event detail</strong><span>Confirm venue, regulations, schedule and final logistics.</span></div>
+    </div>
+
+    <div class="contact-bar">
+      <div><strong>Charles Michael Sports Hub</strong><span>Limuru, Kiambu County, Kenya</span></div>
+      <div><strong>Continue the conversation</strong><span>0754 151 315 · info@charlesmsports.com · www.charlesmsports.com</span></div>
+    </div>
+    <p class="small muted" style="margin-top:4mm">Prepared from the website implementation on 1 November 2026. Event dates, schedule, venue, forecasts, rules and operational arrangements should be reconfirmed by the Hub before publication or external commitments.</p>
+    <div class="footer"><span><strong>CMSH</strong> · Website handover overview</span><span>Prepared 1 November 2026 · Page 6 of 6</span></div>
+  </section>
+</body>
+</html>
