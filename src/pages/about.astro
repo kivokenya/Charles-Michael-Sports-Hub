@@ -163,7 +163,7 @@ import SportIcon from '../components/SportIcon.astro';
           { icon: 'certificate', title: 'Integrity', text: "We say what we mean, publish what we know, and mark what we don't." },
         ].map((v, i) => (
           <div class="card p-6 text-center reveal" style={`transition-delay: ${i * 80}ms`}>
-            <SportIcon name={v.icon} label={v.title} />
+            <SportIcon name={v.icon} label={v.title} decorative />
             <h3 class="font-display font-bold text-2xl text-navy mb-2">{v.title}</h3>
             <p class="font-body text-gray-600 text-sm leading-relaxed">{v.text}</p>
           </div>

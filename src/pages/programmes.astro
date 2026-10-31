@@ -20,7 +20,7 @@ const programmes = [
       'Discipline, respect and confidence',
     ],
     schedule: 'Contact us to confirm current class times',
-    fee: '[PLACEHOLDER: Monthly membership fee]',
+    fee: 'Contact us for current rates',
   },
   {
     id: 'seniors',
@@ -37,8 +37,8 @@ const programmes = [
       'Belt grading and dan promotion',
       'Fitness and self-discipline',
     ],
-    schedule: '[PLACEHOLDER: Days and times]',
-    fee: '[PLACEHOLDER: Monthly membership fee]',
+    schedule: 'Contact us to confirm current class times',
+    fee: 'Contact us for current rates',
   },
   {
     id: 'holiday',
@@ -54,8 +54,8 @@ const programmes = [
       'Technique workshops',
       'Fun team activities',
     ],
-    schedule: '[PLACEHOLDER: Next camp dates]',
-    fee: '[PLACEHOLDER: Camp fee]',
+    schedule: 'Ask us about upcoming camp dates',
+    fee: 'Fees shared when dates are confirmed',
   },
   {
     id: 'school',
@@ -71,8 +71,8 @@ const programmes = [
       'Grading opportunities for participating pupils',
       'Inter-school tournament pathway',
     ],
-    schedule: '[PLACEHOLDER: Enquire for details]',
-    fee: '[PLACEHOLDER: School package rates, enquire]',
+    schedule: 'Contact us to discuss a school visit',
+    fee: 'Rates depend on partnership requirements',
   },
   {
     id: 'coaching',
@@ -88,7 +88,7 @@ const programmes = [
       'Practical training and assessment',
     ],
     schedule: 'Future courses subject to KTF accreditation',
-    fee: '[PLACEHOLDER: Course fee]',
+    fee: 'Fees will be shared when courses are confirmed',
   },
 ];
 ---
@@ -150,7 +150,7 @@ const programmes = [
           <div class="p-8 grid md:grid-cols-3 gap-8 items-start">
             <!-- Left -->
             <div class="md:col-span-1">
-              <SportIcon name={prog.icon} label={prog.title} size="lg" />
+              <SportIcon name={prog.icon} label={prog.title} size="lg" decorative />
               <p class="font-body text-xs text-gray-400 uppercase tracking-wider mb-1">{prog.ages}</p>
               <h2 class="font-display font-bold text-5xl text-navy mb-4">{prog.title}</h2>
               <p class="font-body text-gray-600 leading-relaxed mb-6">{prog.who}</p>
@@ -210,7 +210,7 @@ const programmes = [
             { name: 'board-games', label: 'Board games' },
           ].map((sport) => (
             <div class="bg-bluegrey rounded-xl p-5 flex flex-col items-center gap-3 text-center">
-              <SportIcon name={sport.name} label={sport.label} />
+              <SportIcon name={sport.name} label={sport.label} decorative />
               <span class="font-display font-bold text-lg text-navy">{sport.label}</span>
             </div>
           ))}
@@ -222,7 +222,7 @@ const programmes = [
   <!-- Scholarship note -->
   <section class="py-14 bg-navy text-white text-center">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
-      <SportIcon name="inclusion" label="Scholarship opportunities" size="lg" />
+      <SportIcon name="inclusion" label="Scholarship opportunities" size="lg" decorative />
       <h2 class="font-display font-bold text-5xl mb-4">Scholarship Places</h2>
       <p class="font-body text-blue-100 text-xl leading-relaxed mb-8">
         We hold a number of scholarship places for girls and for families where cost is a barrier. Sport should not be accessible only to those who can easily afford it. Contact us to enquire. All conversations are confidential.

@@ -3,12 +3,18 @@ interface Props {
   name: string;
   label?: string;
   size?: 'md' | 'lg';
+  decorative?: boolean;
 }
 
-const { name, label = name.replace(/-/g, ' '), size = 'md' } = Astro.props;
+const { name, label = name.replace(/-/g, ' '), size = 'md', decorative = false } = Astro.props;
 ---
 
-<span class={`sport-icon sport-icon-${size}`} role="img" aria-label={label}>
+<span
+  class={`sport-icon sport-icon-${size}`}
+  role={decorative ? undefined : 'img'}
+  aria-label={decorative ? undefined : label}
+  aria-hidden={decorative ? 'true' : undefined}
+>
   <svg viewBox="0 0 64 64" aria-hidden="true">
     {name === 'athletics' && (
       <>

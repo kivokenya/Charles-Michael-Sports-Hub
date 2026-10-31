@@ -170,7 +170,7 @@ const schema = {
           { icon: 'community', title: 'Include', text: 'Grow a welcoming community through taekwondo and a developing range of sports for young people and families.' },
         ].map((p, i) => (
           <div class="card p-8 text-center reveal" style={`transition-delay: ${i * 100}ms`}>
-            <SportIcon name={p.icon} label={p.title} size="lg" />
+            <SportIcon name={p.icon} label={p.title} size="lg" decorative />
             <h3 class="font-display font-bold text-3xl text-navy mb-3">{p.title}</h3>
             <p class="font-body text-gray-600 leading-relaxed text-sm">{p.text}</p>
           </div>
@@ -198,7 +198,7 @@ const schema = {
           { name: 'board-games', label: 'Board games' },
         ].map((sport) => (
           <a href="/register" class="card p-5 flex flex-col items-center gap-3 text-center hover:-translate-y-1 transition-transform">
-            <SportIcon name={sport.name} label={sport.label} />
+            <SportIcon name={sport.name} label={sport.label} decorative />
             <span class="font-display font-bold text-xl text-navy">{sport.label}</span>
           </a>
         ))}

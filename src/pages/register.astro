@@ -33,7 +33,7 @@ const sports = [
       <div class="grid grid-cols-3 gap-3 justify-items-center" aria-label="Sports at Charles Michael Sports Hub">
         {sports.map((sport) => (
           <div class="flex flex-col items-center gap-2 text-center">
-            <SportIcon name={sport.name} label={sport.value} size="lg" />
+            <SportIcon name={sport.name} label={sport.value} size="lg" decorative />
             <span class="font-body text-xs sm:text-sm text-blue-100">{sport.value}</span>
           </div>
         ))}
@@ -44,21 +44,21 @@ const sports = [
   <section class="py-12 bg-bluegrey">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-5">
       <article class="card p-6 flex items-start gap-4">
-        <SportIcon name="taekwondo" label="Taekwondo flagship" />
+        <SportIcon name="taekwondo" label="Taekwondo flagship" decorative />
         <div>
           <h2 class="font-display font-bold text-xl text-navy mb-1">Taekwondo is our flagship</h2>
           <p class="font-body text-sm text-gray-600">Our established programme and the martial art featured in our international tournament.</p>
         </div>
       </article>
       <article class="card p-6 flex items-start gap-4">
-        <SportIcon name="community" label="Inclusive sports" />
+        <SportIcon name="community" label="Inclusive sports" decorative />
         <div>
           <h2 class="font-display font-bold text-xl text-navy mb-1">A growing sports offer</h2>
           <p class="font-body text-sm text-gray-600">Other activities are being developed in stages as coaches, facilities and partnerships become available.</p>
         </div>
       </article>
       <article class="card p-6 flex items-start gap-4">
-        <SportIcon name="shield" label="Safe participation" />
+        <SportIcon name="shield" label="Safe participation" decorative />
         <div>
           <h2 class="font-display font-bold text-xl text-navy mb-1">Young people welcome</h2>
           <p class="font-body text-sm text-gray-600">A parent or guardian should complete the form for anyone under 18.</p>
@@ -67,7 +67,7 @@ const sports = [
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-white">
+  <section class="py-16 pb-28 md:py-20 bg-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <p class="section-subtitle">A Few Details</p>
@@ -110,7 +110,7 @@ const sports = [
             {sports.map((sport) => (
               <label class="sport-choice">
                 <input type="checkbox" name="sports" value={sport.value} class="sport-checkbox" />
-                <SportIcon name={sport.name} label={sport.value} />
+                <SportIcon name={sport.name} label={sport.value} decorative />
                 <span>
                   <span class="block font-display font-bold text-lg text-navy">{sport.value}</span>
                   <span class="block font-body text-xs text-gray-500">{sport.description}</span>

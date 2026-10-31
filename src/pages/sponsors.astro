@@ -183,7 +183,7 @@ const tiers = [
           { icon: 'chart', title: 'Post-Event Report', text: 'Within 14 days of the event, you receive a full report with attendance figures, social reach and photo evidence of branding.' },
         ].map((item, i) => (
           <div class="card p-8 text-center reveal" style={`transition-delay: ${i * 100}ms`}>
-            <SportIcon name={item.icon} label={item.title} size="lg" />
+            <SportIcon name={item.icon} label={item.title} size="lg" decorative />
             <h3 class="font-display font-bold text-2xl text-navy mb-3">{item.title}</h3>
             <p class="font-body text-gray-600 text-sm leading-relaxed">{item.text}</p>
           </div>
