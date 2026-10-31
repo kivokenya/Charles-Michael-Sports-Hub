@@ -15,7 +15,7 @@ export interface Props {
 const {
   title,
   description = 'Charles Michael Sports Hub — a community sports hub in Limuru, Kiambu County, Kenya, with taekwondo as its flagship programme.',
-  ogImage = '/images/club-logo-transparent.webp',
+  ogImage = '/images/sports-hub-logo.webp',
   canonical,
   schema,
 } = Astro.props;
@@ -52,6 +52,8 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
     <meta name="twitter:image" content={fullOgImage} />
 
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Schema.org -->
     {schema && (
@@ -66,7 +68,7 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
         "name": "Charles Michael Sports Hub",
         "sport": "Multiple sports, with taekwondo as the flagship programme",
         "url": "https://www.charlesmsports.com",
-        "logo": "https://www.charlesmsports.com/images/club-logo-transparent.webp",
+        "logo": "https://www.charlesmsports.com/images/sports-hub-logo.webp",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Limuru",
