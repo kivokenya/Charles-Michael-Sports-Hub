@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SportIcon from '../components/SportIcon.astro';
 
 const programmes = [
   {
@@ -8,8 +9,8 @@ const programmes = [
     beltName: 'Yellow Belt',
     title: 'Juniors',
     ages: 'Ages 8–17',
-    icon: '🥋',
-    who: 'Boys and girls aged 8 to 17, at any level — from complete beginners to those who have trained before.',
+    icon: 'taekwondo',
+    who: 'Boys and girls aged 8 to 17, at any level, from complete beginners to those who have trained before.',
     what: [
       'Taekwondo fundamentals: stances, blocks, kicks, punches',
       'Poomsae (patterns) practice and competition',
@@ -18,7 +19,7 @@ const programmes = [
       'Physical fitness and coordination',
       'Discipline, respect and confidence',
     ],
-    schedule: '[PLACEHOLDER: Days and times — e.g. Mon/Wed/Sat 9:00am–10:30am]',
+    schedule: 'Contact us to confirm current class times',
     fee: '[PLACEHOLDER: Monthly membership fee]',
   },
   {
@@ -27,8 +28,8 @@ const programmes = [
     beltName: 'Red Belt',
     title: 'Seniors',
     ages: 'Adults (18+)',
-    icon: '🏆',
-    who: 'Adults of any level. Whether you are a returning athlete, a complete beginner, or training for competition — you are welcome.',
+    icon: 'trophy',
+    who: 'Adults of any level. Whether you are returning to sport, a complete beginner or training for competition, you are welcome.',
     what: [
       'Advanced kyorugi (sparring) and poomsae',
       'Competition preparation',
@@ -45,7 +46,7 @@ const programmes = [
     beltName: 'Blue Belt',
     title: 'Holiday Camps',
     ages: 'School holidays',
-    icon: '⛺',
+    icon: 'community',
     who: 'Junior athletes during school holidays. A great entry point or a fast way to accelerate progress in a short time.',
     what: [
       'Intensive daily training sessions',
@@ -62,7 +63,7 @@ const programmes = [
     beltName: 'Green Belt',
     title: 'School Partnerships',
     ages: 'Primary & secondary schools',
-    icon: '🏫',
+    icon: 'certificate',
     who: 'We bring the programme to your school. Ideal for schools looking to add taekwondo to their sports offering.',
     what: [
       'Curriculum-linked sessions during PE or activities time',
@@ -71,7 +72,7 @@ const programmes = [
       'Inter-school tournament pathway',
     ],
     schedule: '[PLACEHOLDER: Enquire for details]',
-    fee: '[PLACEHOLDER: School package rates — enquire]',
+    fee: '[PLACEHOLDER: School package rates, enquire]',
   },
   {
     id: 'coaching',
@@ -79,14 +80,14 @@ const programmes = [
     beltName: 'Black Belt Pathway',
     title: 'Coach & Referee Courses',
     ages: 'Adults',
-    icon: '📋',
+    icon: 'document',
     who: 'Athletes and former athletes looking to give back by coaching or officiating.',
     what: [
       'KTF-accredited coaching certification (coming soon)',
       'KTF-accredited referee certification (coming soon)',
       'Practical training and assessment',
     ],
-    schedule: 'Coming soon — pending KTF accreditation',
+    schedule: 'Future courses subject to KTF accreditation',
     fee: '[PLACEHOLDER: Course fee]',
   },
 ];
@@ -94,7 +95,7 @@ const programmes = [
 
 <BaseLayout
   title="Programmes"
-  description="Taekwondo programmes at Charles Michael Sports Hub — Juniors (8–17), Seniors, Holiday Camps, School Partnerships and Coach/Referee Courses in Limuru, Kenya."
+  description="Explore taekwondo programmes at Charles Michael Sports Hub in Limuru, Kenya, and register interest in the Hub's developing multi-sport activities."
 >
 
   <!-- Hero -->
@@ -103,7 +104,7 @@ const programmes = [
       <p class="section-subtitle text-red-brand mb-3">Train With Us</p>
       <h1 class="font-display font-black text-7xl md:text-8xl text-white leading-none mb-6">Programmes</h1>
       <p class="font-body text-blue-100 text-xl max-w-2xl leading-relaxed">
-        From first kicks to the competition mat. Find your programme below.
+        Taekwondo is our flagship programme. Find current taekwondo opportunities below and tell us which other sports you would like to see at the Hub.
       </p>
     </div>
   </section>
@@ -121,7 +122,7 @@ const programmes = [
         <p class="section-subtitle">Train Together</p>
         <h2 class="section-title mb-4">A place to grow through sport</h2>
         <p class="font-body text-gray-600 text-lg leading-relaxed">
-          Our taekwondo programmes welcome beginners and experienced athletes, with coaching that builds fitness, confidence and competition skills.
+          Taekwondo is the Hub's established flagship sport, with opportunities for beginners and experienced athletes. We are also developing a broader sports offer so more young people can find an activity that suits them.
         </p>
       </div>
     </div>
@@ -149,11 +150,11 @@ const programmes = [
           <div class="p-8 grid md:grid-cols-3 gap-8 items-start">
             <!-- Left -->
             <div class="md:col-span-1">
-              <div class="text-5xl mb-4">{prog.icon}</div>
+              <SportIcon name={prog.icon} label={prog.title} size="lg" />
               <p class="font-body text-xs text-gray-400 uppercase tracking-wider mb-1">{prog.ages}</p>
               <h2 class="font-display font-bold text-5xl text-navy mb-4">{prog.title}</h2>
               <p class="font-body text-gray-600 leading-relaxed mb-6">{prog.who}</p>
-              <a href="/contact#trial" class="btn-primary text-base px-6 py-3">Book a Free Trial →</a>
+              <a href="/register" class="btn-primary text-base px-6 py-3">Register Interest</a>
             </div>
             <!-- Right -->
             <div class="md:col-span-2 grid sm:grid-cols-3 gap-6">
@@ -185,13 +186,46 @@ const programmes = [
     </div>
   </section>
 
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="section-subtitle">Growing Together</p>
+          <h2 class="section-title mb-5">A wider sports community</h2>
+          <p class="font-body text-gray-600 text-lg leading-relaxed mb-5">
+            Beyond our taekwondo programme, we are working towards opportunities in athletics, martial arts, boxing, football, darts and board games. These activities will be introduced in stages as coaches, facilities and community partnerships become available.
+          </p>
+          <p class="font-body text-gray-600 leading-relaxed mb-7">
+            Tell us which sports interest you. Your response helps us understand local demand, and our team will follow up with information about current or planned opportunities.
+          </p>
+          <a href="/register" class="btn-primary">Choose your sports</a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          {[
+            { name: 'athletics', label: 'Athletics' },
+            { name: 'martial-arts', label: 'Martial arts' },
+            { name: 'boxing', label: 'Boxing' },
+            { name: 'football', label: 'Football' },
+            { name: 'darts', label: 'Darts' },
+            { name: 'board-games', label: 'Board games' },
+          ].map((sport) => (
+            <div class="bg-bluegrey rounded-xl p-5 flex flex-col items-center gap-3 text-center">
+              <SportIcon name={sport.name} label={sport.label} />
+              <span class="font-display font-bold text-lg text-navy">{sport.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Scholarship note -->
   <section class="py-14 bg-navy text-white text-center">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
-      <div class="text-5xl mb-4">🌟</div>
+      <SportIcon name="inclusion" label="Scholarship opportunities" size="lg" />
       <h2 class="font-display font-bold text-5xl mb-4">Scholarship Places</h2>
       <p class="font-body text-blue-100 text-xl leading-relaxed mb-8">
-        We hold a number of scholarship places for girls and for families where cost is a barrier. Taekwondo should not be accessible only to those who can easily afford it. Contact us to enquire — all conversations are confidential.
+        We hold a number of scholarship places for girls and for families where cost is a barrier. Sport should not be accessible only to those who can easily afford it. Contact us to enquire. All conversations are confidential.
       </p>
       <a href="/contact" class="btn-secondary text-xl px-8 py-4">Enquire in Confidence →</a>
     </div>

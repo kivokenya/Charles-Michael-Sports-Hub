@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SportIcon from '../components/SportIcon.astro';
 ---
 
 <BaseLayout
@@ -25,13 +26,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="section-subtitle">Our Mission</p>
         <h2 class="section-title mb-6">Built for the Long Game</h2>
         <p class="font-body text-gray-600 text-lg leading-relaxed mb-5">
-          Charles Michael Sports Hub is a community sports organisation founded in Limuru, Kenya. We create welcoming opportunities for children, young people and adults to train, compete and grow. Taekwondo is our flagship programme, where athletes develop their skills in a disciplined and supportive environment.
+          Charles Michael Sports Hub is a community sports organisation founded in Limuru, Kenya. We create welcoming opportunities for children, young people and adults to train, compete and grow. Taekwondo is our flagship programme and the focus of our international tournament. We are growing an inclusive multi-sport vision that also embraces athletics, martial arts, boxing, football, darts and board games.
         </p>
         <p class="font-body text-gray-600 text-lg leading-relaxed mb-5">
-          We believe sport changes lives through more than medals and trophies. Regular training helps people build discipline, respect, confidence and perseverance. We are here to develop athletes and support the people and communities around them.
+          We believe sport changes lives through more than medals and trophies. Regular participation can build discipline, respect, confidence and perseverance. By developing a wider choice of sports and community activities, we aim to welcome more young people, families and abilities.
         </p>
         <p class="font-body text-gray-600 text-lg leading-relaxed">
-          Our long-term ambition is to host an internationally recognised taekwondo open in Kenya, working with the Kenya Taekwondo Federation and the appropriate governing bodies. We are building towards that goal through consistent training, competition and community partnerships.
+          Our long-term ambition is to build accessible pathways into sport and host an internationally recognised taekwondo open in Kenya, working with the Kenya Taekwondo Federation and the appropriate governing bodies. We are building towards these goals through training, competition and community partnerships.
         </p>
       </div>
       <div class="reveal space-y-6">
@@ -100,7 +101,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="section-subtitle">The Founding Team</p>
         <h2 class="section-title">Building the Hub Together</h2>
         <p class="font-body text-gray-600 text-lg max-w-2xl mx-auto mt-4">
-          Meet the people helping shape the Hub through taekwondo, community programmes and organisational leadership.
+          Meet the people helping shape the Hub through sport, community programmes and organisational leadership.
         </p>
       </div>
       <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -155,14 +156,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
         {[
-          { icon: '🎯', title: 'Excellence', text: 'We set high standards. For our athletes and for ourselves.' },
-          { icon: '🙇', title: 'Respect', text: 'In taekwondo, respect is not optional. It is foundational.' },
-          { icon: '🌍', title: 'Inclusion', text: 'Sport should be open to all. We hold places for girls and for families facing financial barriers.' },
-          { icon: '🛡️', title: 'Safety', text: 'Every athlete, especially children, trains in a safe, vetted environment.' },
-          { icon: '⚖️', title: 'Integrity', text: "We say what we mean, publish what we know, and mark what we don't." },
+          { icon: 'target', title: 'Excellence', text: 'We set high standards. For our athletes and for ourselves.' },
+          { icon: 'handshake', title: 'Respect', text: 'We value one another, our coaches and the communities around us.' },
+          { icon: 'inclusion', title: 'Inclusion', text: 'Sport should be open to all. We hold places for girls and for families facing financial barriers.' },
+          { icon: 'shield', title: 'Safety', text: 'Every athlete, especially children, deserves a safe, supportive environment.' },
+          { icon: 'certificate', title: 'Integrity', text: "We say what we mean, publish what we know, and mark what we don't." },
         ].map((v, i) => (
           <div class="card p-6 text-center reveal" style={`transition-delay: ${i * 80}ms`}>
-            <div class="text-4xl mb-3">{v.icon}</div>
+            <SportIcon name={v.icon} label={v.title} />
             <h3 class="font-display font-bold text-2xl text-navy mb-2">{v.title}</h3>
             <p class="font-body text-gray-600 text-sm leading-relaxed">{v.text}</p>
           </div>

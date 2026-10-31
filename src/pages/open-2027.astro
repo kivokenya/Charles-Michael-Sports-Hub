@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import SportIcon from "../components/SportIcon.astro";
 
 const schema = {
     "@context": "https://schema.org",
@@ -49,12 +50,12 @@ const provisionalSchedule = [
             ["8:00–8:20 a.m.", "Coaches’ briefing and athlete assembly", "Coaches and athletes"],
             ["8:20–8:45 a.m.", "Opening ceremony and welcome", "All participants"],
             ["8:45–9:00 a.m.", "Final Poomsae call-up and competition preparation", "Poomsae competitors"],
-            ["9:00 a.m.–12:00 noon", "Poomsae competition — categories and order to be confirmed", "Poomsae competitors"],
+            ["9:00 a.m. to 12:00 noon", "Poomsae competition: categories and order to be confirmed", "Poomsae competitors"],
             ["12:00–12:30 p.m.", "Poomsae medal presentations", "Medal recipients"],
             ["12:30–1:15 p.m.", "Lunch break and competition-area changeover", "All participants"],
-            ["1:15–3:15 p.m.", "Cadet and Junior Kyorugi — preliminary and quarter-final rounds, where applicable", "Cadet and Junior competitors"],
+            ["1:15 to 3:15 p.m.", "Cadet and Junior Kyorugi, preliminary and quarter-final rounds where applicable", "Cadet and Junior competitors"],
             ["3:15–3:30 p.m.", "Scheduled break and timetable review", "All participants"],
-            ["3:30–5:00 p.m.", "Cadet and Junior Kyorugi — semi-finals and finals", "Cadet and Junior competitors"],
+            ["3:30 to 5:00 p.m.", "Cadet and Junior Kyorugi, semi-finals and finals", "Cadet and Junior competitors"],
             ["5:00–5:30 p.m.", "Cadet and Junior medal presentations", "Medal recipients"],
             ["5:30–6:00 p.m.", "Reserved overrun window and end-of-day notices", "All participants"],
         ],
@@ -68,14 +69,14 @@ const provisionalSchedule = [
             ["7:30–8:00 a.m.", "Referees’ briefing, equipment checks and scoring-system checks", "Referees and officials"],
             ["8:00–8:20 a.m.", "Coaches’ briefing and athlete assembly", "Coaches and athletes"],
             ["8:20–8:30 a.m.", "First match call-up", "Under-21 competitors"],
-            ["8:30–10:30 a.m.", "Under-21 Kyorugi — preliminary and quarter-final rounds, where applicable", "Under-21 competitors"],
+            ["8:30 to 10:30 a.m.", "Under-21 Kyorugi, preliminary and quarter-final rounds where applicable", "Under-21 competitors"],
             ["10:30–10:45 a.m.", "Scheduled break", "All participants"],
-            ["10:45 a.m.–12:15 p.m.", "Under-21 Kyorugi — semi-finals and finals", "Under-21 competitors"],
+            ["10:45 a.m. to 12:15 p.m.", "Under-21 Kyorugi, semi-finals and finals", "Under-21 competitors"],
             ["12:15–12:45 p.m.", "Under-21 medal presentations", "Medal recipients"],
             ["12:45–1:30 p.m.", "Lunch break", "All participants"],
-            ["1:30–3:30 p.m.", "Senior Kyorugi — preliminary and quarter-final rounds, where applicable", "Senior competitors"],
+            ["1:30 to 3:30 p.m.", "Senior Kyorugi, preliminary and quarter-final rounds where applicable", "Senior competitors"],
             ["3:30–3:45 p.m.", "Scheduled break", "All participants"],
-            ["3:45–5:00 p.m.", "Senior Kyorugi — semi-finals and finals", "Senior competitors"],
+            ["3:45 to 5:00 p.m.", "Senior Kyorugi, semi-finals and finals", "Senior competitors"],
             ["5:00–5:30 p.m.", "Senior medal presentations", "Medal recipients"],
             ["5:30–6:00 p.m.", "Closing ceremony and any confirmed special awards", "All participants"],
             ["6:00–6:30 p.m.", "Reserved overrun window and departures", "All participants"],
@@ -202,38 +203,36 @@ const provisionalSchedule = [
                         {
                             label: "Event Date",
                             value: "Saturday 10 – Sunday 11 April 2027 (two days)",
-                            icon: "📅",
+                            icon: "document",
                         },
                         {
                             label: "Venue",
                             value: "Limuru Constituency, Kiambu County",
-                            icon: "📍",
+                            icon: "target",
                         },
                         {
                             label: "Format",
                             value: "Olympic-style knockout for Kyorugi",
-                            icon: "📖",
+                            icon: "trophy",
                         },
                         {
                             label: "Athletes Expected",
                             value: "100+ junior & senior",
-                            icon: "🥋",
+                            icon: "athletics",
                         },
                         {
                             label: "Spectators Expected",
                             value: "1,000+",
-                            icon: "👥",
+                            icon: "community",
                         },
                         {
                             label: "Events",
                             value: "Kyorugi (sparring) & Poomsae (patterns)",
-                            icon: "🏆",
+                            icon: "taekwondo",
                         },
                     ].map((item) => (
                         <div class="card p-7 flex items-start gap-4 reveal">
-                            <span class="text-3xl flex-shrink-0">
-                                {item.icon}
-                            </span>
+                            <SportIcon name={item.icon} label={item.label} />
                             <div>
                                 <p class="font-body text-xs text-gray-400 uppercase tracking-wider mb-1">
                                     {item.label}
@@ -254,18 +253,18 @@ const provisionalSchedule = [
                     download="mount-kenya-international-taekwondo-open-2027.ics"
                     class="btn-navy text-lg px-7 py-3 mr-4"
                 >
-                    📅 Add to Calendar
+                    <SportIcon name="document" label="Calendar" /> Add to Calendar
                 </a>
                 <a
-                    href={`https://wa.me/254754151315?text=${encodeURIComponent("Mount Kenya International Taekwondo Open Tournament 2027 — Saturday 10 and Sunday 11 April 2027, Limuru, Kenya. Details: https://www.charlesmsports.com/open-2027")}`}
+                    href={`https://wa.me/254754151315?text=${encodeURIComponent("Mount Kenya International Taekwondo Open Tournament 2027: Saturday 10 and Sunday 11 April 2027, Limuru, Kenya. Details: https://www.charlesmsports.com/open-2027")}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn-primary text-lg px-7 py-3"
                 >
-                    📲 Share on WhatsApp
+                    Share on WhatsApp
                 </a>
                 <a href="#awards" class="btn-secondary text-lg px-7 py-3">
-                    🏅 View Awards & Prizes
+                    <SportIcon name="trophy" label="Awards" /> View Awards & Prizes
                 </a>
             </div>
         </div>
@@ -316,12 +315,12 @@ const provisionalSchedule = [
                     <div class="grid sm:grid-cols-2 gap-4 font-body text-sm">
                         {
                             [
-                                ["Cadets — Male", "-33, -37, -41, -45, -49, -53, -57, -61, -65, +65 kg"],
-                                ["Cadets — Female", "-29, -33, -37, -41, -44, -47, -51, -55, -59, +59 kg"],
-                                ["Juniors — Male", "-45, -48, -51, -55, -59, -63, -68, -73, -78, +78 kg"],
-                                ["Juniors — Female", "-42, -44, -46, -49, -52, -55, -59, -63, -68, +68 kg"],
-                                ["Seniors — Male", "-54, -58, -63, -68, -74, -80, -87, +87 kg"],
-                                ["Seniors — Female", "-46, -49, -53, -57, -62, -67, -73, +73 kg"],
+                                ["Cadets, Male", "-33, -37, -41, -45, -49, -53, -57, -61, -65, +65 kg"],
+                                ["Cadets, Female", "-29, -33, -37, -41, -44, -47, -51, -55, -59, +59 kg"],
+                                ["Juniors, Male", "-45, -48, -51, -55, -59, -63, -68, -73, -78, +78 kg"],
+                                ["Juniors, Female", "-42, -44, -46, -49, -52, -55, -59, -63, -68, +68 kg"],
+                                ["Seniors, Male", "-54, -58, -63, -68, -74, -80, -87, +87 kg"],
+                                ["Seniors, Female", "-46, -49, -53, -57, -62, -67, -73, +73 kg"],
                                 ["Under-21", "Categories to be confirmed in the event regulations"],
                             ].map(([division, categories]) => (
                                 <div class="rounded-lg bg-bluegrey p-4">
@@ -341,7 +340,7 @@ const provisionalSchedule = [
                         href="/documents/mount-kenya-international-taekwondo-open-2027-bulletin.pdf"
                         download
                         class="btn-navy mt-6 text-base px-5 py-2.5 w-full justify-center"
-                        >📄 Download Official Bulletin</a
+                        ><SportIcon name="document" label="Bulletin" /> Download Official Bulletin</a
                     >
                 </div>
             </div>
@@ -479,9 +478,9 @@ const provisionalSchedule = [
                                 <tr><th scope="col" class="p-3">Category</th><th scope="col" class="p-3">1st</th><th scope="col" class="p-3">2nd</th><th scope="col" class="p-3">3rd</th></tr>
                             </thead>
                             <tbody>
-                                <tr class="border-b border-gray-200"><th scope="row" class="p-3 font-semibold text-navy">Individual players — men and women</th><td class="p-3">KSh 15,000</td><td class="p-3">KSh 10,000</td><td class="p-3">KSh 5,000</td></tr>
-                                <tr class="border-b border-gray-200 bg-white"><th scope="row" class="p-3 font-semibold text-navy">Poomsae, under 30 — men and women</th><td class="p-3">KSh 10,000</td><td class="p-3">KSh 7,000</td><td class="p-3">KSh 5,000</td></tr>
-                                <tr class="border-b border-gray-200"><th scope="row" class="p-3 font-semibold text-navy">Poomsae, 30–39 — men and women</th><td class="p-3">KSh 10,000</td><td class="p-3">KSh 7,000</td><td class="p-3">KSh 5,000</td></tr>
+                                <tr class="border-b border-gray-200"><th scope="row" class="p-3 font-semibold text-navy">Individual players (men and women)</th><td class="p-3">KSh 15,000</td><td class="p-3">KSh 10,000</td><td class="p-3">KSh 5,000</td></tr>
+                                <tr class="border-b border-gray-200 bg-white"><th scope="row" class="p-3 font-semibold text-navy">Poomsae, under 30 (men and women)</th><td class="p-3">KSh 10,000</td><td class="p-3">KSh 7,000</td><td class="p-3">KSh 5,000</td></tr>
+                                <tr class="border-b border-gray-200"><th scope="row" class="p-3 font-semibold text-navy">Poomsae, ages 30 to 39 (men and women)</th><td class="p-3">KSh 10,000</td><td class="p-3">KSh 7,000</td><td class="p-3">KSh 5,000</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -565,7 +564,7 @@ const provisionalSchedule = [
                     <div class="card p-6 sm:p-8 reveal">
                         <div class="mb-5">
                             <h3 class="font-display font-bold text-2xl sm:text-3xl text-navy">
-                                {day.day} — {day.title}
+                                {day.day}: {day.title}
                             </h3>
                             <p class="font-body text-gray-500 text-sm mt-2">{day.note}</p>
                         </div>
@@ -649,7 +648,7 @@ const provisionalSchedule = [
                     [
                         {
                             role: "Athletes",
-                            icon: "🥋",
+                            icon: "taekwondo",
                             steps: [
                                 "Complete the online registration form from 1 February 2027",
                                 "Pay the KSh 1,000 entry fee per participant using the organiser's verified payment instructions",
@@ -659,7 +658,7 @@ const provisionalSchedule = [
                         },
                         {
                             role: "Clubs & Coaches",
-                            icon: "🏫",
+                            icon: "community",
                             steps: [
                                 "Team captain submits a team entry form",
                                 "List all athletes with weight class and division",
@@ -669,7 +668,7 @@ const provisionalSchedule = [
                         },
                         {
                             role: "Officials",
-                            icon: "📋",
+                            icon: "document",
                             steps: [
                                 "KTF-certified referees and judges invited by the organiser",
                                 "Contact us to express interest if you hold KTF certification",
@@ -682,7 +681,7 @@ const provisionalSchedule = [
                             class="bg-white/10 backdrop-blur rounded-lg p-8 reveal"
                             style={`transition-delay: ${i * 100}ms`}
                         >
-                            <div class="text-4xl mb-3">{group.icon}</div>
+                            <SportIcon name={group.icon} label={group.role} size="lg" />
                             <h3 class="font-display font-bold text-3xl text-white mb-5">
                                 {group.role}
                             </h3>
@@ -832,7 +831,7 @@ const provisionalSchedule = [
                         },
                         {
                             q: "What is the refund policy?",
-                            a: "[PLACEHOLDER: Refund policy — to be published in the bulletin]",
+                            a: "[PLACEHOLDER: Refund policy to be published in the bulletin]",
                         },
                     ].map((item, i) => (
                         <div
@@ -877,7 +876,7 @@ const provisionalSchedule = [
     <!-- Bulletin download -->
     <section id="bulletin" class="py-14 bg-navy text-white text-center">
         <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
-            <div class="text-5xl mb-4">📄</div>
+            <SportIcon name="document" label="Official bulletin" size="lg" />
             <h2 class="font-display font-bold text-5xl mb-4">
                 Official Bulletin
             </h2>
@@ -890,7 +889,7 @@ const provisionalSchedule = [
                 href="/documents/mount-kenya-international-taekwondo-open-2027-bulletin.pdf"
                 download
                 class="btn-secondary text-xl px-8 py-4"
-                >📄 Download Official Bulletin</a
+                ><SportIcon name="document" label="Bulletin" /> Download Official Bulletin</a
             >
         </div>
     </section>

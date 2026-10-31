@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SportIcon from '../components/SportIcon.astro';
 
 const schema = {
   "@context": "https://schema.org",
@@ -31,7 +32,7 @@ const schema = {
 
 <BaseLayout
   title="Home"
-  description="Charles Michael Sports Hub is Kenya's newest sports hub in Limuru, Kiambu County, offering taekwondo training and hosting the Mount Kenya International Taekwondo Open Tournament."
+  description="Charles Michael Sports Hub is a community sports organisation in Limuru, Kiambu County, growing opportunities across taekwondo, athletics, martial arts, boxing, football and more."
   schema={schema}
 >
 
@@ -56,11 +57,11 @@ const schema = {
           with Pride.
         </h2>
         <p class="font-body text-blue-100 text-xl leading-relaxed mb-10 max-w-xl">
-          Kenya's newest sports hub, based in Limuru. We create opportunities for athletes to train, compete and grow, with taekwondo at the heart of our flagship programme.
+          Based in Limuru, we are building an inclusive sports community where young people and families can find ways to train, compete and grow. Taekwondo is our flagship programme, alongside a growing vision for athletics, martial arts, boxing, football, darts and board games.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="/contact#trial" class="btn-primary text-xl px-8 py-4">
-            Jaribu Bure · Book a Free Trial
+          <a href="/register" class="btn-primary text-xl px-8 py-4">
+            Register Your Interest
           </a>
           <a href="/open-2027" class="btn-secondary text-xl px-8 py-4">
             Flagship Tournament
@@ -163,18 +164,46 @@ const schema = {
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {[
-          { icon: '🥋', title: 'Train', text: 'Structured coaching under World Taekwondo Federation (WTF) rules. Juniors (8-17) and seniors. Every level welcome.' },
-          { icon: '🏆', title: 'Compete', text: 'Host and enter sporting competitions. The Mount Kenya International Taekwondo Open Tournament is our flagship event.' },
-          { icon: '🎖️', title: 'Certify', text: 'Progress through belt grades at formal promotion tests. Earn recognition your CV will carry.' },
-          { icon: '🌍', title: 'Host', text: 'Bring athletes and communities together through well-run sporting events, starting with our international taekwondo open.' },
+          { icon: 'taekwondo', title: 'Train', text: 'Build skills, fitness and confidence through our flagship taekwondo programme, with opportunities for beginners and experienced athletes.' },
+          { icon: 'trophy', title: 'Compete', text: 'Take part in sporting events, led by our flagship Mount Kenya International Taekwondo Open Tournament.' },
+          { icon: 'certificate', title: 'Progress', text: 'Develop skills and work toward recognised milestones through structured training and sport.' },
+          { icon: 'community', title: 'Include', text: 'Grow a welcoming community through taekwondo and a developing range of sports for young people and families.' },
         ].map((p, i) => (
           <div class="card p-8 text-center reveal" style={`transition-delay: ${i * 100}ms`}>
-            <div class="text-5xl mb-4">{p.icon}</div>
+            <SportIcon name={p.icon} label={p.title} size="lg" />
             <h3 class="font-display font-bold text-3xl text-navy mb-3">{p.title}</h3>
             <p class="font-body text-gray-600 leading-relaxed text-sm">{p.text}</p>
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-10 reveal">
+        <p class="section-subtitle">A Hub for Every Ability</p>
+        <h2 class="section-title mb-4">More ways for young people to take part</h2>
+        <p class="font-body text-gray-600 text-lg leading-relaxed">
+          Taekwondo is our flagship sport and the focus of our international tournament. We are also building an inclusive multi-sport offer across athletics, martial arts, boxing, football, darts and board games. These activities are being developed in stages, so availability may vary. Register your interest and we will share updates as opportunities open.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        {[
+          { name: 'athletics', label: 'Athletics' },
+          { name: 'martial-arts', label: 'Martial arts' },
+          { name: 'boxing', label: 'Boxing' },
+          { name: 'football', label: 'Football' },
+          { name: 'darts', label: 'Darts' },
+          { name: 'board-games', label: 'Board games' },
+        ].map((sport) => (
+          <a href="/register" class="card p-5 flex flex-col items-center gap-3 text-center hover:-translate-y-1 transition-transform">
+            <SportIcon name={sport.name} label={sport.label} />
+            <span class="font-display font-bold text-xl text-navy">{sport.label}</span>
+          </a>
+        ))}
+      </div>
+      <p class="font-body text-sm text-gray-500 mt-5">Taekwondo remains our flagship programme and the martial art at the centre of our tournament.</p>
     </div>
   </section>
 
@@ -256,7 +285,7 @@ const schema = {
       </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center reveal">
         <a href="/open-2027" class="btn-secondary text-xl px-8 py-4">Event Details</a>
-        <a href="/contact#trial" class="btn-primary text-xl px-8 py-4">Register Interest</a>
+        <a href="/register" class="btn-primary text-xl px-8 py-4">Register Interest</a>
       </div>
     </div>
   </section>
@@ -268,7 +297,7 @@ const schema = {
         <p class="section-subtitle">Join Us</p>
         <h2 class="section-title">Programmes</h2>
         <p class="font-body text-gray-600 text-lg max-w-2xl mx-auto mt-4">
-          Whether you're 8 or 38, a beginner or a competitor - there's a place for you at Charles Michael Sports Hub.
+          Taekwondo leads our programme today. We are building more ways for children, young people and adults to take part in sport.
         </p>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -369,13 +398,13 @@ const schema = {
   <section class="py-24 bg-red-brand text-white text-center" style="clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
       <h2 class="font-display font-black text-6xl sm:text-7xl leading-none mb-6">
-        Your First Kick<br/>Is Free.
+        Find Your Place<br/>in Sport.
       </h2>
       <p class="font-body text-red-100 text-xl mb-10">
-        Come see what Charles Michael Sports Hub is building. Bring your child, bring yourself. No kit needed. Just show up.
+        Tell us which sports interest you. Our team will share details about current programmes and new opportunities as they develop.
       </p>
-      <a href="/contact#trial" class="inline-flex items-center gap-3 bg-white text-red-brand font-display font-black text-2xl px-10 py-5 rounded-sm shadow-2xl hover:bg-bluegrey transition-colors">
-        Book Your Free Trial Today →
+      <a href="/register" class="inline-flex items-center gap-3 bg-white text-red-brand font-display font-black text-2xl px-10 py-5 rounded-sm shadow-2xl hover:bg-bluegrey transition-colors">
+        Join the Hub
       </a>
     </div>
   </section>

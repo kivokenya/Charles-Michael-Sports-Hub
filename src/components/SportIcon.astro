@@ -1,0 +1,167 @@
+---
+interface Props {
+  name: string;
+  label?: string;
+  size?: 'md' | 'lg';
+}
+
+const { name, label = name.replace(/-/g, ' '), size = 'md' } = Astro.props;
+---
+
+<span class={`sport-icon sport-icon-${size}`} role="img" aria-label={label}>
+  <svg viewBox="0 0 64 64" aria-hidden="true">
+    {name === 'athletics' && (
+      <>
+        <circle cx="39" cy="12" r="7" class="icon-red" />
+        <path d="m33 23 10 5 7 11-5 3-8-8-7-2-5 10 11 4-2 5-16-3 3-13-9 10-5-3 12-17z" class="icon-base" />
+        <path d="m27 27-9-5-8 5-3-4 10-9 14 5z" class="icon-metal" />
+        <path d="m42 45 11 6-2 5-14-4-1-3z" class="icon-red" />
+      </>
+    )}
+    {name === 'taekwondo' && (
+      <>
+        <circle cx="25" cy="12" r="7" class="icon-red" />
+        <path d="m23 22 12 4 7 10-5 4-8-8-8 7-6-4 8-11-8-3 2-5z" class="icon-base" />
+        <path d="m34 27 15-9 4 5-15 13-7-3z" class="icon-red" />
+        <path d="m20 38-9 12-5-3 9-16zM32 39l-2 15-6 1-1-18z" class="icon-metal" />
+      </>
+    )}
+    {name === 'martial-arts' && (
+      <>
+        <circle cx="23" cy="13" r="6" class="icon-red" />
+        <circle cx="43" cy="13" r="6" class="icon-metal" />
+        <path d="m20 22 8 3 5 9-5 3-5-6-4 8-6-3 6-12-5-3zM41 22l-8 3-4 9 5 3 5-6 4 8 6-3-6-12 5-3z" class="icon-base" />
+        <path d="m29 29 6 2-3 6-6-3z" class="icon-red" />
+        <path d="m17 39-5 12-5-2 4-13zM44 39l5 12 5-2-4-13z" class="icon-metal" />
+      </>
+    )}
+    {name === 'boxing' && (
+      <>
+        <path d="M17 29c0-9 7-16 17-16h9c6 0 10 5 10 11v9c0 3-2 5-5 5h-3v7c0 3-2 5-5 5H24c-4 0-7-3-7-7z" class="icon-red" />
+        <path d="M19 30h18c4 0 7 3 7 7v5H25c-4 0-7-3-7-7z" class="icon-base" />
+        <path d="M32 18v10m9-10v10" fill="none" stroke="#dbe7f3" stroke-width="3" stroke-linecap="round" />
+        <path d="M23 51h18" fill="none" stroke="#b3202a" stroke-width="4" stroke-linecap="round" />
+      </>
+    )}
+    {name === 'football' && (
+      <>
+        <circle cx="32" cy="32" r="23" class="icon-metal" />
+        <path d="m32 20 9 7-3 11H26l-3-11z" class="icon-base" />
+        <path d="m32 20 2-10m7 17 10-5m-13 16 4 12M26 38l-4 12m1-23-10-5" fill="none" stroke="#fff" stroke-width="3" />
+        <circle cx="32" cy="32" r="23" fill="none" stroke="#b3202a" stroke-width="3" />
+      </>
+    )}
+    {name === 'darts' && (
+      <>
+        <circle cx="30" cy="34" r="22" class="icon-metal" />
+        <circle cx="30" cy="34" r="14" fill="none" stroke="#b3202a" stroke-width="5" />
+        <circle cx="30" cy="34" r="5" class="icon-gold" />
+        <path d="m33 31 16-20 5 4-17 19z" class="icon-base" />
+        <path d="m45 13 7-8 5 6-6 7z" class="icon-red" />
+      </>
+    )}
+    {name === 'board-games' && (
+      <>
+        <path d="M17 52h31v5H17z" class="icon-base" />
+        <path d="M21 47h23l-3 5H24z" class="icon-metal" />
+        <path d="m25 45 4-11h8l4 11z" class="icon-red" />
+        <path d="M29 32c-5-7 0-16 6-16s11 9 6 16l-6 4z" class="icon-base" />
+        <path d="M30 13c0-4 3-7 6-7s6 3 6 7v3H30z" class="icon-gold" />
+        <path d="M25 35h17" fill="none" stroke="#dbe7f3" stroke-width="3" />
+      </>
+    )}
+    {name === 'trophy' && (
+      <>
+        <path d="M21 12h22v15c0 9-5 15-11 15s-11-6-11-15z" class="icon-gold" />
+        <path d="M21 17H11v7c0 8 5 12 14 12m18-19h10v7c0 8-5 12-14 12" fill="none" stroke="#b3202a" stroke-width="5" stroke-linejoin="round" />
+        <path d="M29 42h6v9h-6zM22 51h20v6H22z" class="icon-base" />
+        <path d="m32 18 2 5h5l-4 3 2 5-5-3-5 3 2-5-4-3h5z" fill="#fff" />
+      </>
+    )}
+    {name === 'certificate' && (
+      <>
+        <path d="M17 8h30v38H17z" class="icon-metal" />
+        <path d="M22 13h20v29H22z" fill="#fff" />
+        <path d="M26 19h12m-12 6h12m-12 6h8" fill="none" stroke="#1f3a5f" stroke-width="3" stroke-linecap="round" />
+        <circle cx="40" cy="43" r="9" class="icon-gold" />
+        <path d="m35 50-2 10 7-4 7 4-2-10" class="icon-red" />
+      </>
+    )}
+    {name === 'community' && (
+      <>
+        <circle cx="24" cy="21" r="8" class="icon-red" />
+        <circle cx="43" cy="23" r="7" class="icon-gold" />
+        <path d="M8 49c0-10 7-17 16-17s16 7 16 17v4H8z" class="icon-base" />
+        <path d="M37 35c10-4 19 3 19 13v5H39v-4c0-5-1-10-4-14z" class="icon-metal" />
+      </>
+    )}
+    {name === 'shield' && (
+      <>
+        <path d="M32 6 52 14v15c0 13-8 22-20 29C20 51 12 42 12 29V14z" class="icon-base" />
+        <path d="m22 32 7 7 14-16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M32 10v42" fill="none" stroke="#b3202a" stroke-width="2" opacity=".8" />
+      </>
+    )}
+    {name === 'target' && (
+      <>
+        <circle cx="31" cy="34" r="23" class="icon-metal" />
+        <circle cx="31" cy="34" r="15" fill="#fff" stroke="#b3202a" stroke-width="5" />
+        <circle cx="31" cy="34" r="6" class="icon-gold" />
+        <path d="m34 31 15-19 5 4-16 18z" class="icon-base" />
+      </>
+    )}
+    {name === 'handshake' && (
+      <>
+        <path d="m7 29 12-12 10 2 5 5 7-4 16 12-8 10-9-3-7 7-7-2-5 2-14-11z" class="icon-metal" />
+        <path d="m20 28 9-8c3-2 7 0 8 3l-9 9 9 8-6 6-8-6-5 2-9-8z" class="icon-base" />
+        <path d="m42 22 12 10-8 10-11-8-6-5 8-8z" class="icon-red" />
+        <path d="m25 34 8 7m-13-2 7 6" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" />
+      </>
+    )}
+    {name === 'inclusion' && (
+      <>
+        <circle cx="32" cy="15" r="7" class="icon-gold" />
+        <circle cx="15" cy="24" r="6" class="icon-red" />
+        <circle cx="49" cy="24" r="6" class="icon-metal" />
+        <path d="M20 49c0-10 5-17 12-17s12 7 12 17v5H20z" class="icon-base" />
+        <path d="M4 49c0-8 4-14 11-14 3 0 6 1 8 4-2 3-3 7-3 11v4H4zm36 0c0-4-1-8-3-11 2-2 5-3 8-3 7 0 11 6 11 14v5H40z" class="icon-red" />
+      </>
+    )}
+    {name === 'document' && (
+      <>
+        <path d="M16 7h22l11 11v39H16z" class="icon-metal" />
+        <path d="M37 8v12h11" fill="none" stroke="#fff" stroke-width="4" />
+        <path d="M23 29h18m-18 8h18m-18 8h12" fill="none" stroke="#1f3a5f" stroke-width="3" stroke-linecap="round" />
+        <path d="m40 47 4 4 8-10" fill="none" stroke="#b3202a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      </>
+    )}
+    {name === 'chart' && (
+      <>
+        <path d="M10 52h46" fill="none" stroke="#1f3a5f" stroke-width="4" stroke-linecap="round" />
+        <path d="M15 46V32h9v14zm14 0V22h9v24zm14 0V12h9v34z" class="icon-metal" />
+        <path d="m13 26 13-9 10 3 15-12" fill="none" stroke="#b3202a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="m47 8 5 0-1 6" fill="none" stroke="#b3202a" stroke-width="3" stroke-linecap="round" />
+      </>
+    )}
+  </svg>
+</span>
+
+<style>
+  .sport-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    border: 1px solid rgba(255, 255, 255, .75);
+    border-radius: 9999px;
+    background: radial-gradient(circle at 30% 20%, #fff 0%, #edf3fa 24%, #d2deeb 68%, #a9bacd 100%);
+    box-shadow: inset 0 2px 3px rgba(255,255,255,.9), inset 0 -5px 8px rgba(31,58,95,.18), 0 7px 12px rgba(21,41,69,.2);
+  }
+  .sport-icon-md { width: 3.75rem; height: 3.75rem; padding: .68rem; }
+  .sport-icon-lg { width: 5.25rem; height: 5.25rem; padding: .9rem; }
+  .sport-icon svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 2px 1px rgba(21,41,69,.2)); }
+  .icon-base { fill: #1f3a5f; }
+  .icon-red { fill: #b3202a; }
+  .icon-metal { fill: #7e94ac; }
+  .icon-gold { fill: #d3a640; }
+</style>

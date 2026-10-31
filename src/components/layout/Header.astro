@@ -3,6 +3,7 @@ const navItems = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Programmes', href: '/programmes' },
+  { label: 'Register', href: '/register' },
   { label: 'Mount Kenya Open', href: '/open-2027' },
   { label: 'Sponsors', href: '/sponsors' },
   { label: 'Pathway', href: '/pathway' },
@@ -18,7 +19,7 @@ const currentPath = Astro.url.pathname;
     <div class="flex items-center justify-between h-20 lg:h-24">
 
       <!-- Logo -->
-      <a href="/" class="flex items-center flex-shrink-0" aria-label="Charles Michael Sports Hub — Home">
+      <a href="/" class="flex items-center flex-shrink-0" aria-label="Charles Michael Sports Hub home">
         <img
           src="/images/sports-hub-logo.webp"
           alt="Charles Michael Sports Hub"
@@ -43,8 +44,8 @@ const currentPath = Astro.url.pathname;
 
       <!-- CTA Button + Hamburger -->
       <div class="flex items-center gap-3">
-        <a href="/contact#trial" class="hidden sm:inline-flex btn-primary text-base px-5 py-2.5">
-          Jaribu Bure · Book a Trial
+        <a href="/register" class="hidden sm:inline-flex btn-primary text-base px-5 py-2.5">
+          Join the Hub
         </a>
         <!-- Mobile menu button -->
         <button
@@ -76,8 +77,8 @@ const currentPath = Astro.url.pathname;
           {label}
         </a>
       ))}
-      <a href="/contact#trial" class="mt-3 btn-primary text-center justify-center">
-        Jaribu Bure · Book a Trial
+      <a href="/register" class="mt-3 btn-primary text-center justify-center">
+        Register with the Hub
       </a>
     </nav>
   </div>
